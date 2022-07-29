@@ -412,8 +412,8 @@ h1, h2, h3, h4, h5, p {
         z-index: 5; }
       .about .about__container .about__image .about__image_wave-up {
         position: absolute;
-        top: 0px;
-        right: 20px;
+        top: 15px;
+        right: -30px;
         z-index: 1;
         transform: rotate(-10deg) scale(0.5); }
       .about .about__container .about__image .about__image_wave-down {
@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5, p {
     left: -49vw; } }
 
 .about__stack_marquee {
-  animation: runningLine 10s linear infinite; }
+  animation: runningLine 15s linear infinite; }
 
 @media (max-width: 1500px) {
   .container {
