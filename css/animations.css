@@ -1,0 +1,77 @@
+@keyframes comics-appear {
+  from {
+    transform: scale(0) rotate(45deg) translateY(50px); }
+  to {
+    transform: scale(1) rotate(0) translateY(0px); } }
+
+.git15__comics {
+  transform: scale(0) rotate(45deg);
+  animation: comics-appear;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+  animation-fill-mode: forwards; }
+
+@keyframes wave {
+  from {
+    transform: rotate(0); }
+  20% {
+    transform: rotate(20deg); }
+  40% {
+    transform: rotate(-12deg); }
+  60% {
+    transform: rotate(15deg); }
+  80% {
+    transform: rotate(-17deg); }
+  to {
+    transform: rotate(0); } }
+
+@keyframes hand-wave-up {
+  from {
+    transform: rotate(0deg) scale(0.2) translateY(0);
+    opacity: 0; }
+  50% {
+    transform: rotate(10deg) scale(0.5) translateY(-50px);
+    opacity: 1; }
+  to {
+    transform: rotate(10deg) scale(0.5) translateY(-70px);
+    opacity: .3; } }
+
+@keyframes hand-wave-down {
+  from {
+    transform: rotate(0deg) scale(0.2) translateY(0);
+    opacity: 0; }
+  50% {
+    transform: rotate(10deg) scale(0.5) translateY(45px);
+    opacity: 1; }
+  to {
+    transform: rotate(10deg) scale(0.5) translateY(65px);
+    opacity: .3; } }
+
+.about__image__img {
+  animation: wave;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; }
+
+.about__image_wave-up {
+  animation: hand-wave-up;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+.about__image_wave-down {
+  animation: hand-wave-down;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite; }
+
+@keyframes runningLine {
+  from {
+    left: 51vw; }
+  to {
+    left: -49vw; } }
+
+.about__stack_marquee {
+  animation: runningLine 10s linear infinite; }
