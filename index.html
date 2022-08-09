@@ -5,360 +5,250 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="./source/img/s_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Жвакин Сергей - frontend | верстка</title>
+    <title>Жвакин Сергей | frontend-разработчик</title>
 </head>
 <body>
     <div class="wrapper">
-        <div class="header__decorate-line"></div>
-    <header class="header">
-        <div class="header__container container">
-            <!----- Header Photo ----->
-            <div class="header__photo">
-                <img src="./source/img/passport_photo.JPG" alt="My Photo" class="header__photo__img">
+        <!-- Header -->
+        <header class="header">
+            <div class="header__container container">
+                <!-- Header Info -->
+                <div class="header__info">
+                    <h2 class="header__name">Жвакин Сергей</h2>
+                    <p class="header__profession">frontend-разработчик</p>
+                </div>
+                <!-- Header Burger -->
+                <div class="header__burger">
+                    <div class="burger__bar burger__bar_1"></div>
+                    <div class="burger__bar burger__bar_2"></div>
+                    <div class="burger__bar burger__bar_3"></div>
+                </div>
+                <!-- Header Nav -->
+                <nav class="header__nav">
+                    <a href="mailto:scripscratch@mail.ru" class="header__link header__link_mail" title="Mail" target="_blank"></a>
+                    <a href="https://github.com/scrip-scratch" class="header__link header__link_git" title="GitHub
+                    " target="_blank"></a>
+                    <a href="https://t.me/scripscratch" class="header__link header__link_telegram"  title="Telegram" target="_blank"></a>
+                    <a href="https://instagram.com/scripscratch" class="header__link header__link_instagram" title="Instagram" target="_blank"></a>
+                    <a href="https://vk.com/scripscratch" class="header__link header__link_vk" title="VK" target="_blank"></a>
+                </nav>
             </div>
-            <!----- Header Info ----->
-            <div class="header__info">
-                <h2 class="header__name">Жвакин Сергей Юрьевич</h2>
-                <h2 class="header__name_short">Жвакин Сергей</h2>
-                <p class="header__profession">frontend-разработчик | верстальщик</p>
-                <p class="header__profession_short">frontend | верстка</p>
-            </div>
-            <!----- Header Nav ----->
-            <div class="header__burger">
-                <div class="burger__bar burger__bar_1"></div>
-                <div class="burger__bar burger__bar_2"></div>
-                <div class="burger__bar burger__bar_3"></div>
-            </div>
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__link header__link_portfolio">Портфолио</li>
-                    <li class="header__link header__link_about">Обо мне</li>
-                    <li class="header__link header__link_contacts">Контакты</li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <!------------ Git15 ------------>
-        <section class="git15">
-            <div class="git15__container">
-                <div class="git15__info">
-                    <!----- Git15 Comics ----->
-                    <div class="git15__comics">
-                        <a class="git15__comics_link" href="#about"><img src="./source/img/comics.png" alt="" class="git15__comics__img"></a>
+        </header>
+        <!-- Main -->
+        <main>
+            <!-- About -->
+            <section class="about">
+                <div class="about__container">
+                    <!-- About Image -->
+                    <div class="about__image">
+                        <img src="./source/img/me_bw.png" alt="Me">
                     </div>
-                    <!----- Git15 My Photo ----->
-                    <div class="git15__me">
-                        <img src="./source/img/me_bw.png" alt="Me" class="git15__me__img">
-                    </div>
-                    <!----- Git15 Mail ----->
-                    <div class="git15__mail">
-                        <img src="./source/img/mail_icon.png" alt="Mail" class="git15__mail__img">
-                        <p class="git15__mail__text">scripscratch@mail.ru</p>
-                    </div>
-                    <p class="git15__mail__hint">нажмите, чтобы скопировать</p>
-                </div>
-                <!----- Git15 Game ----->
-                <div class="git15__game">
-    
-                </div>
-                <div class="git15__buttons">
-                    <button class="git15__game__play git15__button"></button>
-                    <button class="git15__game__mess git15__button"></button>
-                    <button class="git15__game__order git15__button"></button>
-                </div>
-            </div> 
-        </section>
-        <!------------ Portfolio ------------>
-        <section class="porfolio" id="portfolio">
-            <div class="porfolio__container container">
-                <!----- Portfolio Header ----->
-                <h3 class="portfolio__header">МОИ РАБОТЫ</h3>
-                <!----- Portfolio Slider ----->
-                <div class="portfolio__slider">
-                    <div class="slider__row">
-                        <!----- Portfolio Slider Item 1----->
-                        <div class="slider__item">
-                            <div class="slider__item__image slider__item__image-sostoyanie">
-                                <div class="sostoyanie__slider_row">
-                                    <img src="./source/img/sostoyanie-app_1.png"    alt="Condition App" class="slider__item__image__img">
-                                    <img src="./source/img/sostoyanie-app_2.png"    alt="Condition App" class="slider__item__image__img">
-                                    <img src="./source/img/sostoyanie-app_3.png"    alt="Condition App" class="slider__item__image__img">
+                    <button class="about__stop-play"></button>
+                    <div class="about__scroll-area"></div>
+                    <!-- About Content -->
+                    <div class="about__content">
+                        <!-- About Slider -->
+                        <div class="about-slider">
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <div class="about-slider__image">
+                                    <img src="./source/img/hand.png" alt="Waving Hand">
                                 </div>
-                                
+                                <p class="about__text"><mark>Салют!</mark></p>
+                                <p class="about__text">Меня зовут Сергей. Занимаюсь веб-разработкой с 2020.</p>
                             </div>
-                            <div class="slider__item__info">
-                                <h4 class="slider__item__header">СОСТОЯНИЕ</h4>
-                                <p class="slider__item__text">Состояние - мой pet-проект. Приложения для отслеживания личного состояния, физического эмоционального и душевного.</p>
-                                <p class="slider__item__text">Пользователь оценивает свое состояние от 1 до 10 и вводит данные. На основе введенных данных строится график с помощью <a class="slider__item__link"  href="#">API Recharts</a>.</p>
-                                <p class="slider__item__text">На данный момент проект на этапе написания серверной части.</p>
-                                <div class="slider__item__stack">
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/figma.png"   alt="Figma" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/react.png"   alt="React" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/nodejs.png"  alt="Node JS" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/postgress.png"   alt="Postgres SQL"    class="slider__item__img">
-                                    </div>
-
-                                </div>
-                                <p class="slider__item__text"><a class="slider__item__link"  href="https://github.com/scrip-scratch/condition-app" target="_blank">Ссылка</a> на Git-репозиторий с кодом.</p>
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text">Люблю фронтенд и <mark>JavaScript.</mark></p>
+                                <p class="about__text">Проходил курс “Fullstack JS + PHP” от SkillFactory.</p>
+                                <p class="about__text">Но в процессе понял, что React и NodeJS, нравятся мне больше.</p>
                             </div>
-                        </div>
-                        <!----- Portfolio Slider Item 2----->
-                        <div class="slider__item">
-                            <div class="slider__item__image">
-                                <div class="real-estate-page__slider_row">
-                                    <img src="./source/img/reale-estate-page.png"   alt="GREANHOUSE Page" class="slider__item__image__img">
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text">Биография кратко.</p>
+                                <p class="about__text"><mark>2012-2016</mark> - танцевал и преподавал брейк-данс.</p>
+                                <p class="about__text"><mark>2016-2020</mark> - работал на складе и играл музыку.</p>
+                                <p class="about__text"><mark>2020-2022</mark> - работал дизайнером и изучал веб.</p>   
+                            </div>
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text"><mark>Владею технологиями:</mark> HTML/CSS/SASS, JS, Gulp, npm, Git.</p>
+                                <p class="about__text"><mark>Знаком с:</mark> React, NodeJS, Express, Postgress.</p>
+                                <div class="about-slider__image">
+                                    <img src="./source/img/keypad.png" alt="Keyboard">
                                 </div>
                             </div>
-                            <div class="slider__item__info">
-                                <h4 class="slider__item__header">GREANHOUSE PAGE</h4>
-                                <p class="slider__item__text">Страница агенства недвижимости Greenhouse.</p>
-                                <p class="slider__item__text">Случайный понравившийся макет с Figma Community.</p>
-                                <p class="slider__item__text">Верстка с препроцессоров SCSS. Слайдер и стилизованные выпадающие списки на чистом JS.</p>
-                                <div class="slider__item__stack">
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/figma.png" alt="Figma" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/html.png" alt="HTML 5" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/css.png" alt="CSS 3" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/js.png" alt="ECMA 6" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/sass.png" alt="SCSS" class="slider__item__img">
-                                    </div>
-                                </div>
-                                <p class="slider__item__text"><a class="slider__item__link"  href="https://github.com/scrip-scratch/real-estate-page" target="_blank">Ссылка</a> на Git-репозиторий с кодом.</p>
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text"><mark>Работал</mark> с Photoshop, Figma, Illustrator, AfterEffect.</p>
+                                <p class="about__text"><mark>Английский B2,</mark> могу общаться и читать документацию.</p>
+                                <p class="about__text">Умею быстро вникать, самостоятельно гуглить и разбираться.</p>
                             </div>
-                        </div>
-                        <!----- Portfolio Slider Item 3----->
-                        <div class="slider__item">
-                            <div class="slider__item__image">
-                                <div class="real-estate-page__slider_row">
-                                    <img src="./source/img/NFT-page.png"   alt="NFT Page" class="slider__item__image__img">
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text"><mark>Ищу работу</mark> верстальщиком, фронтенд-разработчиком. В приоритете официальное трудоустройство.</p>
+                                <div class="about-slider__image">
+                                    <img src="./source/img/mac-user.jpeg" alt="Web Developer">
                                 </div>
                             </div>
-                            <div class="slider__item__info">
-                                <h4 class="slider__item__header">PsychoArt Page</h4>
-                                <p class="slider__item__text">Страница NFT-проекта.</p>
-                                <p class="slider__item__text">Макет из Figma Community.</p>
-                                <p class="slider__item__text">Верстка с адаптивом под разные экраны</p>
-                                <div class="slider__item__stack">
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/figma.png"   alt="Figma" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/html.png"   alt="HTML 5" class="slider__item__img">
-                                    </div>
-                                    <div class="slider__item__stack_item">
-                                        <img src="./source/img/stack/css.png"  alt="CSS 3" class="slider__item__img">
-                                    </div>
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text">Проживаю <mark> в Иркутске</mark>, в будущем планирую переезд.</p>
+                                <p class="about__text">Для удаленной работы распологаю всем необходимым - ПК на Windows и Macbook.</p>
+                            </div>
+                            <!-- About Slider Item -->
+                            <div class="about-slider__item">
+                                <p class="about__text">Сам <mark>обязательный</mark>, аккуратный, трудолюбивый.</p>
+                                <p class="about__text">Люблю учиться и развиваться.</p>
+                                <div class="about-slider__image">
+                                    <img src="./source/img/brain.png" alt="Brain">
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!----- Portfolio Slider Nav ----->
-                    <div class="slider__nav">
-                        <div class="slider__nav__item slider__nav__active"></div>
-                        <div class="slider__nav__item"></div>
-                        <div class="slider__nav__item"></div>
-                     </div>
-                </div>
-            </div>
-        </section>
-        <!------------ About ------------>
-        <section class="about" id="about">
-            <div class="about__container container">
-                <!----- About Hand ----->
-                <div class="about__image">
-                    <img src="./source/img/hand.png" alt="Waving Hand" class="about__image__img">
-                    <img src="./source/img/hand_wave_up.png" alt="Waving Hand" class="about__image_wave-up">
-                    <img src="./source/img/hand_wave_down.png" alt="Waving Hand" class="about__image_wave-down">
-                </div>
-                <!----- About Info ----->
-                <div class="about__info">
-                    <h3 class="about__info__header">САЛЮТ!</h3>
-                    <p class="about__info__text">Меня зовут Сергей. Увлекаюсь веб-разработкой с 2020.</p>
-                    <p class="about__info__text">Люблю фронтенд и JavaScript. Проходил курс “Веб-разработчик JS + PHP” от SkillFactory. Но, после знакомства с React, Node и Express, про PHP благополучно забыл &#128513;</p>
-                    <p class="about__info__text">Биография кратко <br />2012-2016 - танцевал и преподавал брейк-данс &#128095;<br />2016-2020 - работал на складе и играл музыку как DJ &#128191;<br />2020-2022 - работал дизайнером и изучал веб &#128187;</p>
-                    <p class="about__info__text">Ищу работу верстальщиком, фронтенд-разработчиком. В приоритете официальное трудоустройство. Если в Иркутске, то лучше в офисе. Если удаленно, то распологаю всем необходимым - ПК на Windows и Macbook. Сам обязательный, аккуратный, трудолюбивый. Люблю учиться и развиваться.</p>
-                </div>
-                <!----- About Stack ----->
-            </div>
-            <div class="about__stack">
-                <p class="about__stack__text">В разной степени знаком со следующими технологиями:</p>
-                <div class="about__stack_marquee">
-                    <div class="about__stack__row">
-                        <!-- all stack -->
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/aftereffect.png" alt="Aftereffect">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/premier.png" alt="Premier Pro">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/illustrator.png" alt="Illustrator">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/photoshop.png" alt="Photoshop">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/figma.png" alt="Figma">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/miscrosoft.png" alt="Miscrosoft">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/macos.png" alt="Mac OS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/html.png" alt="HTML 5">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/css.png" alt="CSS 3">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/js.png" alt="ECMA 6">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/git.png" alt="Git">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/sass.png" alt="Scss">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/bem.png" alt="BEM">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/gulp.png" alt="Gulp">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/php.png" alt="PHP 7">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/nodejs.png" alt="Node.JS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/react.png" alt="React JS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/mysql.png" alt="MySQL">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/postgress.png" alt="Postgres SQL">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/graphql.png" alt="Graph QL">
-                        </div>  
-                        <!-- all stack -->
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/aftereffect.png" alt="Aftereffect">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/premier.png" alt="Premier Pro">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/illustrator.png" alt="Illustrator">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/photoshop.png" alt="Photoshop">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/figma.png" alt="Figma">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/miscrosoft.png" alt="Miscrosoft">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/macos.png" alt="Mac OS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/html.png" alt="HTML 5">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/css.png" alt="CSS 3">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/js.png" alt="ECMA 6">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/git.png" alt="Git">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/sass.png" alt="Scss">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/bem.png" alt="BEM">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/gulp.png" alt="Gulp">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/php.png" alt="PHP 7">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/nodejs.png" alt="Node.JS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/react.png" alt="React JS">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/mysql.png" alt="MySQL">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/postgress.png" alt="Postgres SQL">
-                        </div>
-                        <div class="about__stack__row_item">
-                            <img class="about__stack__img" src="./source/img/stack/graphql.png" alt="Graph QL">
-                        </div>  
                     </div>
                 </div>
-            </div>
-        </section>
-        <!------------ Contacts ------------>
-        <section class="contacts" id="contacts">
-            <div class="contacts_container container">
-                <p class="contacts__phone">8-950-060-87-17</p>
-                <p class="contacts__git">
-                    <a href="https://github.com/scrip-scratch" target="_blank">github.com/scrip-scratch</a>
-                </p>
-                <p class="contacts__mail">scripscratch@mail.ru</p>
-                <p class="contacts__instagram">
-                    <a target="_blank" href="https://instagram.com/scripscratch">scripscratch</a>
-                </p>
-            </div>
-            <div class="contacts_container_mobile container">
-                <a href="tel:+79500608717" class="contacts__mobile_link">
-                    <img src="./source/img/phone_icon.png" alt="Call Me">
-                </a>
-                <a href="mailto:scripscratch@mail.ru">
-                    <img src="./source/img/mail_footer_item.png" alt="Mail Me">
-                </a>
-                <a href="https://github.com/scrip-scratch" class="contacts__mobile_link">
-                    <img src="./source/img/git_icon.png" alt="My Git">
-                </a>
-                <a href="https://instagram.com/scripscratch" class="contacts__mobile_link">
-                    <img src="./source/img/instagram_icon.png" alt="My Instagram">
-                </a>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">наверх</footer>
+            </section>
+            <!-- Git15 -->
+            <section class="git15">
+                <div class="git15__container">
+                    <!-- Git15 Info -->
+                    <div class="git15__info">
+                        <h3 class="git15__header">Головоломка "Пятнашки"</h3>
+                        <p class="git15__text">Подскажет, куда я выкладываю свои проекты.</p>
+                        <p class="git15__text"><a href="https://github.com/scrip-scratch" target="_blank" rel="noopener noreferrer">github.com/scrip-scratch</a></p>
+                    </div>
+                    <!-- Git15 Game Field -->
+                    <div class="git15__game-container">
+                        <!-- Git15 Game -->
+                        <div class="git15__game">
+                        </div>
+                        <!-- Git15 Buttons -->
+                        <div class="git15__buttons">
+                            <button class="git15__game__shuffle git15__button"></button>
+                            <button class="git15__game__order git15__button"></button>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+            <!-- Memo -->
+            <section class="memo">
+                <div class="memo__container">
+                    <!-- Memo Info -->
+                    <div class="memo__info">
+                        <h3 class="memo__header">Игра "Найди Пару"</h3>
+                        <p class="memo_text">Раскажет, с какими технологиями я работал.</p>
+                    </div>
+                    <!-- Memo Field -->
+                    <div class="memo__game">
+                        <div class="memo__win">
+                            <img src="https://i.gifer.com/WwaQ.gif" alt="Firework">
+                        </div>
+                    </div>
+                    <!-- Memo Buttons -->
+                    <div class="memo__buttons">
+                        <button class="memo__hint">
+                        </button>
+                        <button class="memo__replay">
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <!-- Skills -->
+            <section class="skills">
+                <div class="skills__container container">
+                    <!-- Skills Header -->
+                    <h3 class="skills__header">Мои навыки</h3>
+                    <!-- Skills Slider Buttons -->
+                    <div class="skill-slider__buttons">
+                        <button class="skill-slider__button skill-slider__button_left"></button>
+                        <button class="skill-slider__button skill-slider__button_right"></button>
+                    </div>
+                    <!-- Skills Slider -->
+                    <div class="skills__slider">
+                        <!-- Skills Slider Row -->
+                        <div class="skill-slider__row skill-slider__shifting">
+                            <!-- Skills Slider Item -->
+                            <div class="skill-slider__item">
+                                <div class="skill-slider__info">
+                                    <p class="skill-slider__header"><mark>Верстка</mark></p>
+                                    <p class="skill-slider__text">Адаптивная, отзывчивая, кроссбраузерная.</p>
+                                    <p class="skill-slider__text">С макетов <mark>Figma</mark> и Photoshop.</p>
+                                    <p class="skill-slider__text">С использованием плагина <mark>Pixel Perfect</mark>.</p>
+                                    <p class="skill-slider__text">С подходами Progressive Enhancement (<mark>Mobile First</mark>) и Graceful Degradation (Desktop First).</p>
+                                    <p class="skill-slider__text">C шаблонизатором <mark>Pug</mark>, препроцессором <mark>Sass</mark> и сборщиком <mark>Gulp</mark>.</p>
+                                </div>
+                                <div class="skill-slider__responsive">
+                                    <img src="./source/img/reale-estate-page.png" alt="Верстка">
+                                </div>
+                            </div>
+                            <!-- Skills Slider Item -->
+                            <div class="skill-slider__item">
+                                <div class="skill-slider__info">
+                                    <p class="skill-slider__header"><mark>JavaScript</mark></p>
+                                    <p class="skill-slider__text">Написание <mark>логики</mark> интерактивных взаимодействий пользователя со страницей.</p>
+                                    <p class="skill-slider__text">Прослушивание событий, работа с <mark>DOM</mark>.</p>
+                                    <p class="skill-slider__text">Работа c <mark>AJAX</mark> запросами.</p>
+                                    <p class="skill-slider__text">Работа с <mark>cookie</mark> и localStorage.</p>
+                                </div>
+                                <div class="skill-slider__image">
+                                    <img src="./source/img/javascript.png" alt="JavaScript">
+                                </div>
+                            </div>
+                            <!-- Skills Slider Item -->
+                            <div class="skill-slider__item">
+                                <div class="skill-slider__info">
+                                    <p class="skill-slider__header"><mark>React</mark></p>
+                                    <p class="skill-slider__text">Работа с React-компонентами и приложениями.</p>
+                                    <p class="skill-slider__text">Стилизация компонентов с помощью <mark>styled</mark>.</p>
+                                    <p class="skill-slider__text">Мой <mark>пэт-проект</mark> "Cостояние" на React + Express + Postgress. Приложение для отслеживания персонального состояния (физического, эмоционального). По введенным данным отрисовывается график с помощью <a href="#"><mark>API Recharts</mark></a>.</p>
+                                    <p class="skill-slider__text"><a class="slider__item__link"  href="https://github.com/scrip-scratch/condition-app" target="_blank">Ссылка</a> на Git-репозиторий проекта.</p>
+                                    
+                                </div>
+                                <div class="skill-slider__image">
+                                    <img src="./source/img/sostoyanie-app_1.png" alt="Состояние">
+                                </div>
+                            </div>
+                            <!-- Skills Slider Item -->
+                            <div class="skill-slider__item">
+                                <div class="skill-slider__info">
+                                    <p class="skill-slider__header"><mark>Дизайн</mark></p>
+                                    <p class="skill-slider__text">Создание и редактура векторной и растровой графики.</p>
+                                    <p class="skill-slider__text">Photoshop, Illustrator, <mark>Figma</mark>.</p>
+                                    <p class="skill-slider__text">Монтаж видеороликов в AfterEffect и Premier.</p>
+                                </div>
+                                <div class="skill-slider__image">
+                                    <div class="video__example">пример</div>
+                                    <video src="./source/video/na_dachu.mp4" autoplay="autoplay" loop="loop" controls="controls"></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skills Slider Remote -->
+                    <div class="skill-slider__remote">
+                    </div>
+                </div>
+            </section>
+            <!-- I want -->
+            <section class="iwant">
+                <div class="iwant__container container">
+                    <!-- Iwant Info -->
+                    <div class="iwant__info">
+                        <!-- Iwant Header -->
+                        <h3 class="iwant__header">Мои цели</h3>
+                        <!-- Iwant Text -->
+                        <p class="iwant__text">Я хочу работать в <mark>команде</mark> и развиваться как <mark>фронтенд</mark>-специалист.</p>
+                        <p class="iwant__text">Я хочу участвовать в создании <mark>удобных</mark>, современных, красивых интерфейсов.</p>
+                        <p class="iwant__text">Верстать, проектировать, писать логику, возможно иногда дизайнить.</p>
+                        <p class="iwant__text">Изучать новые технологии, углублять познания старых.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">наверх</footer>
     </div>
-    <!------------ Header ------------>  
 <script src="./scripts/game_15.js"></script>
+<script src="./scripts/game_memo.js"></script>
 <script src="./scripts/script.js"></script>
 </body>
 </html>

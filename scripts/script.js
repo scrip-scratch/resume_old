@@ -1,139 +1,233 @@
-// ==== git15 mail block 
+// ==================================== about slider =====================================
 
-const mailBlock = document.querySelector('.git15__mail');
-const mailBlockText = document.querySelector('.git15__mail__text');
-const mailBlockHint = document.querySelector('.git15__mail__hint');
+const aboutSlider = document.querySelector('.about-slider');
+const aboutSliderScrollArea = document.querySelector('.about__scroll-area');
+const aboutSliderPlayStop = document.querySelector('.about__stop-play');
+let isMoving = true;
+// ==== about slider interval move 
 
-window.addEventListener('scroll', function() {
-
-
-    if (pageYOffset = 300 && mailBlockHint.style.top != '10px') {
-        setTimeout(() => {
-            mailBlockHint.style.top = '10px';
-        }, 1500);
+function aboutSliderMove () {
+    aboutSlider.classList.add('about-slider_moving');
+    let offset = aboutSlider.offsetLeft;
+    if (+offset < -2500) {
+        aboutSlider.style.left = "500px";
+    } else {
+        aboutSlider.style.left = `${offset - 4}px`;   
     }
-  });
+}
 
-mailBlock.addEventListener('click', () => {
+let startSliderMove = setInterval(aboutSliderMove, 100);
 
-    let area = document.createElement('textarea');
-    document.body.appendChild(area);
-    area.value = mailBlockText.innerHTML;
-    area.select();
-    document.execCommand("copy");
-    document.body.removeChild(area);
+function aboutSliderPlayToggle () {
+    if(isMoving) {
+        clearInterval(startSliderMove);
+        isMoving = false;
+    } else {
+        startSliderMove = setInterval(aboutSliderMove, 100);
+        isMoving = true;
+    }
+}
 
-    setTimeout(() => {
-        mailBlockHint.style.top = '-30px';
-    }, 100);
+aboutSliderPlayStop.addEventListener('click', aboutSliderPlayToggle);
+
+// ==== about slider wheel scroll
+
+aboutSliderScrollArea.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    clearInterval(startSliderMove);
+
+    aboutSlider.classList.add('about-slider_moving');
+    let offset = aboutSlider.offsetLeft;
+    aboutSlider.style.left = `${offset - (e.deltaY*3)}px`; 
+
+    if (isMoving == true) startSliderMove = setInterval(aboutSliderMove, 100);
 })
 
-// ==== portfolio stack hints 
+// ==== about slider drag scroll
+let sliderPressed = false;
+let sartX, currX;
 
-const stackImg = document.querySelectorAll('.slider__item__img');
+aboutSliderScrollArea.addEventListener('mouseenter', () => {
+    aboutSliderScrollArea.style.cursor = 'grab';
+})
+aboutSliderScrollArea.addEventListener('mouseup', () => {
+    aboutSliderScrollArea.style.cursor = 'grab';
+})
 
-for (img of stackImg) {
+aboutSliderScrollArea.addEventListener('mousedown', (e) => {
+    sliderPressed = true;
+    clearInterval(startSliderMove);
+    aboutSlider.classList.remove('about-slider_moving');
 
-    let hint = document.createElement('div');
-    hint.classList.add('img_hint');
-    hint.innerHTML = img.alt;
+    startX = e.offsetX - aboutSlider.offsetLeft;
 
-    img.insertAdjacentElement('afterEnd', hint);
-}
+    aboutSliderScrollArea.style.cursor = 'grabbing';
+ 
+})
 
-// ==== about stack hints 
+aboutSliderScrollArea.addEventListener('mousemove', (e) => {
+    if (!sliderPressed) return;
+    e.preventDefault();
 
-const stackAboutImg = document.querySelectorAll('.about__stack__img');
-
-for (img of stackAboutImg) {
-
-    let hint = document.createElement('div');
-    hint.classList.add('img_hint');
-    hint.innerHTML = img.alt;
-
-    img.insertAdjacentElement('afterEnd', hint);
-}
+    currX = e.offsetX;
+    aboutSlider.style.left = `${currX - startX}px`;
+})
 
 
-// === sostoyanie profile images
+window.addEventListener('mouseup', () => {
+    if (!sliderPressed) return;
+    sliderPressed = false;
+    if (isMoving == true) startSliderMove = setInterval(aboutSliderMove, 100);
+    aboutSlider.classList.add('about-slider_moving');
+})
 
-const sostoyanieRow = document.querySelector('.sostoyanie__slider_row');
-let sostoyanieStep = sostoyanieRow.offsetWidth;
-let sostoyanieOffset = 0;
 
-let sostoyanieRowSlider = setInterval(() => {
-    sostoyanieOffset -= sostoyanieStep;
-    if (sostoyanieOffset < -(sostoyanieStep * 2)) {
-        sostoyanieOffset = 0;
+
+
+
+
+
+// ================================  mess header string ================
+
+const headerName = document.querySelector('.header__name');
+const headerProfession = document.querySelector('.header__profession');
+const initialString = headerProfession.innerHTML;
+
+headerName.addEventListener('mouseover', () => {
+
+    function setDelay (index) {
+            let length = initialString.length;
+            setTimeout(() => {
+                    let random = Math.floor(Math.random() * length);
+                    headerProfession.innerHTML = initialString.replace(initialString.charAt(random), initialString.charAt(random).toUpperCase());
+                    if(length == index) {
+                        headerProfession.innerHTML = initialString;
+                    }
+            }, 45 * index);
+        }
+
+    for (let i = 0; i <= initialString.length; i++) {
+        setDelay(i);
     } 
-    sostoyanieRow.style.left = sostoyanieOffset + 'px';   
-}, 2000);
 
-// === portfoli0 slider image
-
-const portfolioSlider = document.querySelector('.slider__row');
-const portfolioSliderButtons = document.querySelectorAll('.slider__nav__item');
-let portfolioSliderStep = portfolioSlider.offsetWidth;
-
-window.addEventListener('resize', function(event) {
-    portfolioSliderStep = portfolioSlider.offsetWidth;
-}, true);
-portfolioSlider.style.left = portfolioSliderStep + 'px';
-portfolioSlider.style.left = 0;
-
-portfolioSliderButtons.forEach((item, index) => {
-
-    item.addEventListener('click', function() {
-        portfolioSlider.style.left = -(portfolioSliderStep * index) + 'px';
-        portfolioSliderButtons.forEach((i) => {
-            i.classList.remove('slider__nav__active');
-        })
-        item.classList.add('slider__nav__active');
-    })
 })
 
-// === smooth scroll 
+headerName.addEventListener('mouseout', () => {
+    headerProfession.innerHTML = initialString;
+})
 
-function smoothScrollTo (element) {
-    element.scrollIntoView({block: "center", behavior: "smooth"});
+
+// ==================================== skill slider =====================================
+
+
+// находим блок точек страниц слайдера
+
+// создаем и добавляем в блок точку к каждому элементу слайдера 
+
+
+const slider = document.querySelector('.skill-slider__row');
+const sliderItems = document.querySelectorAll('.skill-slider__item');
+const sliderButtonPrev = document.querySelector('.skill-slider__button_left');
+const sliderButtonNext = document.querySelector('.skill-slider__button_right');
+const sliderDots = document.querySelector('.skill-slider__remote');
+
+slide(slider, sliderItems, sliderButtonPrev, sliderButtonNext, sliderDots);
+
+function slide(wrapper, items, prev, next, dots) {
+
+    let posInitial = 0;
+        slidesLength = items.length;
+        slideSize = items[0].offsetWidth,
+        posInitial = -slideSize;
+        firstSlide = items[0],
+        lastSlide = items[slidesLength - 1],
+        cloneFirst = firstSlide.cloneNode(true),
+        cloneLast = lastSlide.cloneNode(true),
+        index = 0,
+        allowShift = true;
+
+    wrapper.appendChild(cloneFirst);
+    wrapper.insertBefore(cloneLast, firstSlide);
+  
+    prev.addEventListener('click', function () { shiftSlide(-1) });
+    next.addEventListener('click', function () { shiftSlide(1) });
+
+    for (let i = 0; i < slidesLength; i++) {
+        let dot = document.createElement('div');
+        dot.classList.add('skill-slider__dot');
+        dots.appendChild(dot);
+        dot.addEventListener('click', () => shiftByDot(i));
+    }
+
+    shiftSlide(1);
+    index = 0;
+    dotAddActive(0);
+    allowShift = true;
+
+    wrapper.addEventListener('transitionend', checkIndex, false);
+
+    function shiftSlide(dir) {
+        wrapper.classList.add('skill-slider__shifting');
+        if (allowShift) {
+          posInitial = wrapper.offsetLeft;
+          if (dir == 1) {
+            wrapper.style.left = (posInitial - slideSize) + "px";
+            index++;      
+          } else if (dir == -1) {
+            wrapper.style.left = (posInitial + slideSize) + "px";
+            index--;      
+          }
+        };
+          
+        allowShift = false;
+    }
+    
+    function checkIndex (){
+        wrapper.classList.remove('skill-slider__shifting');
+        if (index == -1) {
+            wrapper.style.left = -(slidesLength * slideSize) + "px";
+            index = slidesLength - 1;
+        }
+        if (index == slidesLength) {
+            wrapper.style.left = -(1 * slideSize) + "px";
+            index = 0;
+        }
+        dotAddActive(index);
+        allowShift = true;
+    }
+
+    function shiftByDot (i) {
+        wrapper.classList.add('skill-slider__shifting');
+        wrapper.style.left = -((i + 1) * slideSize) + "px";
+        index = i;
+
+        dotAddActive(i); 
+    }
+
+    function dotAddActive (i) {
+        for(dot of dots.children) {
+            dot.classList.remove('skill-slider__dot_active');
+        }
+        dots.children[i].classList.add('skill-slider__dot_active');
+    }
+
+    window.addEventListener('resize', function(event) {
+        slideSize = items[0].offsetWidth;
+        shiftSlide(1);
+    }, true);
 }
 
-const linkToPortfolio = document.querySelector('.header__link_portfolio');
-const linkToAbout = document.querySelector('.header__link_about');
-const linkToContacts = document.querySelector('.header__link_contacts');
-const footerLinkToUp = document.querySelector('.footer');
 
-const porfolio = document.querySelector('.porfolio');
-const about = document.querySelector('.about');
-const contacts = document.querySelector('.contacts');
+
+// ==================================== footer smooth scroll to header =====================================
+
+const footer = document.querySelector('.footer');
 const header = document.querySelector('.header');
 
-linkToPortfolio.addEventListener('click', () => {
-    smoothScrollTo(porfolio);
-    headerBurger.classList.remove('header__burger__active');
-    headerNav.classList.remove('header__nav_active');
-});
-linkToAbout.addEventListener('click', () => {
-    smoothScrollTo(about);
-    headerBurger.classList.remove('header__burger__active');
-    headerNav.classList.remove('header__nav_active');
-});
-linkToContacts.addEventListener('click', () => {
-    smoothScrollTo(contacts);
-    headerBurger.classList.remove('header__burger__active');
-    headerNav.classList.remove('header__nav_active');
-});
-footerLinkToUp.addEventListener('click', () => {
-    smoothScrollTo(header);
-});
+footer.addEventListener('click', () => {
 
-
-// === header burger 
-
-const headerBurger = document.querySelector('.header__burger');
-const headerNav = document.querySelector('.header__nav');
-
-headerBurger.addEventListener('click', () => {
-    headerBurger.classList.toggle('header__burger__active');
-    headerNav.classList.toggle('header__nav_active');
+    header.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
 })
