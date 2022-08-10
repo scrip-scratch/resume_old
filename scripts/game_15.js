@@ -105,10 +105,8 @@ function startGame15 (field) {
 
 startGame15(field_15);
 
-window.addEventListener('resize', function(event) {
-    field_15.innerHTML = '';
-    this.setTimeout(() => {
-        startGame15(field_15);
-    }, 500)  
-}, true);
+// window.addEventListener('resize', function(event) {
+//     field_15.innerHTML = '';
+//     startGame15(field_15);
+// }, true);
 
