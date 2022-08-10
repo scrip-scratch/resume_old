@@ -1,3 +1,35 @@
 @media (max-width: 1500px) {
   .container {
-    padding: 0 2em; } }
+    padding: 0 50px; }
+  .header {
+    height: 10vw; } }
+
+@media (max-width: 1240px) {
+  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
+    font-size: 32px; }
+  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__text {
+    font-size: 18px; } }
+
+@media (max-width: 970px) {
+  .header {
+    height: 12vh; }
+    .header .header__container .header__info {
+      flex-direction: column;
+      align-items: start;
+      gap: 0; }
+  .git15 .git15__container {
+    padding: 100px 0;
+    flex-direction: column; }
+    .git15 .git15__container .git15__info {
+      margin: 25px 0; }
+  .memo .memo__container {
+    padding: 100px 0; }
+  .skills .skills__container {
+    padding: 100px 0; }
+    .skills .skills__container .skills__slider .skill-slider__row {
+      max-height: 800px; }
+      .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr; }
+  .memo .memo__container {
+    padding: 100px 0; } }

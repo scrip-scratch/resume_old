@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./source/img/s_icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./source/img/flavicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>Жвакин Сергей | frontend-разработчик</title>
 </head>
 <body>
+    <div class="noresponse">
+        <div class="noresponse__image">
+            <img src="https://i.gifer.com/Xqg8.gif" alt="Oops">  
+        </div>
+        <p class="noresponse__text">Данное разрешение на поддерживается</p>
+    </div>
     <div class="wrapper">
         <!-- Header -->
         <header class="header">
@@ -45,7 +51,10 @@
                     <div class="about__image">
                         <img src="./source/img/me_bw.png" alt="Me">
                     </div>
-                    <button class="about__stop-play"></button>
+                    <div class="about__buttons">
+                        <button class="about__stop-play"></button>
+                        <button class="about__reverse"></button>
+                    </div>
                     <div class="about__scroll-area"></div>
                     <!-- About Content -->
                     <div class="about__content">
@@ -160,10 +169,7 @@
                     <!-- Skills Header -->
                     <h3 class="skills__header">Мои навыки</h3>
                     <!-- Skills Slider Buttons -->
-                    <div class="skill-slider__buttons">
-                        <button class="skill-slider__button skill-slider__button_left"></button>
-                        <button class="skill-slider__button skill-slider__button_right"></button>
-                    </div>
+                    
                     <!-- Skills Slider -->
                     <div class="skills__slider">
                         <!-- Skills Slider Row -->
@@ -218,7 +224,6 @@
                                     <p class="skill-slider__text">Монтаж видеороликов в AfterEffect и Premier.</p>
                                 </div>
                                 <div class="skill-slider__image">
-                                    <div class="video__example">пример</div>
                                     <video src="./source/video/na_dachu.mp4" autoplay="autoplay" loop="loop" controls="controls"></video>
                                 </div>
                             </div>
@@ -226,6 +231,9 @@
                     </div>
                     <!-- Skills Slider Remote -->
                     <div class="skill-slider__remote">
+                        <button class="skill-slider__button skill-slider__button_left"></button>                           
+                        <div class="skill-slider__dots"></div>
+                        <button class="skill-slider__button skill-slider__button_right"></button>
                     </div>
                 </div>
             </section>

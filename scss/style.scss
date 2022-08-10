@@ -4,6 +4,7 @@ $main-font: 'Roboto', sans-serif;
 
 $main-color: #4877BB;
 $second-color: #343434;
+$second-color-light: rgba($color: $second-color, $alpha: .75);
 $blue-gradient: linear-gradient(318deg, rgba(65,133,197,1) 35%, rgba(34,199,246,1) 100%);
 
 h1, h2, h3, h4, h5, p {
@@ -30,16 +31,68 @@ body {
     margin: 0 auto;
 }
 
+@mixin section-header {
+    font-size: 32px;
+    font-weight: 500;
+    color: #fff;
+    background-color: $second-color;
+    border-radius: 15px;
+    width: fit-content;
+    padding: 5px 15px;
+}
+
+@mixin section-text {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+// ============================================================================
+
+.noresponse {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $second-color;
+    .noresponse__image {
+        display: block;
+        width: 240px;
+        height: 100px;
+        margin-bottom: 15px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50%;
+        }
+    } 
+    .noresponse__text {
+        font-weight: 400;
+        color: #fff;
+        font-size: 14px;
+    } 
+}
+
 // ============================================================================
 
 .header {
     width: 100vw;
     background-color: #fff;
-    height: 7vw;
+    height: 125px;
+    position: relative;
+    z-index: 10;
     // === header container
     .header__container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
         height: 100%;
         opacity: 0;
@@ -74,12 +127,38 @@ body {
             
             .header__profession {
                 font-size: 24px;
-                color: rgba($color: $second-color, $alpha: .75);
+                color: $second-color-light;
             }
         }
         // === header burger
         .header__burger {
             display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 2em;
+            width: 3em;
+            cursor: pointer;
+            .burger__bar {
+                transition: all .2s;
+                width: 100%;
+                height: 5px;
+                background-color: $second-color-light;
+            }
+        }
+        .header__burger_active {
+            .burger__bar {
+                background-image: $blue-gradient;
+            }
+            .burger__bar_1 {
+                transform: rotate(45deg) translateY(1.15em);
+            }
+            .burger__bar_2 {
+                transform: rotate(360deg) scale(0);
+            }
+            .burger__bar_3 {
+                transform: rotate(-45deg) translateY(-1.15em);
+            }
         }
         // === header nav
         .header__nav {
@@ -148,46 +227,60 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 5vw 0 0;
+        padding: 100px 0 0;
         position: relative;
+        overflow: hidden;
         // === about image
         .about__image {
             position: relative;
-            z-index: 2;
-            bottom: -100vh;
+            z-index: 5;
+            transform: translateY(100vh);
             pointer-events: none;
-            top: 5px;
+            bottom: -20px;
             img {
                 width: 90%;
             }
         }
         // === about stop-play button
-        .about__stop-play {
+        .about__buttons {
+            display: flex;
             position: absolute;
-            right: 40%;
-            bottom: 28%;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-            background-size: contain;
-            border-radius: 50%;
-            border: none;
-            background: url(../source/img/play-pause.png) center / contain;
-            transition: all .2s;
-            &:hover {
-                background: url(../source/img/play-pause_blue.png) center / contain;
+            right: 150px;
+            bottom: 75px;
+            gap: 15px;
+            .about__stop-play, .about__reverse {   
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                background-size: contain;
+                border-radius: 50%;
+                border: none;
+                transition: all .2s;
+                &:active {
+                    scale: .95;
+                }   
             }
-            &:active {
-                scale: .95;
+            .about__stop-play {
+                background: url(../source/img/play-pause.png) center / contain;
+                &:hover {
+                    background: url(../source/img/play-pause_blue.png) center / contain;
+                }
+            }
+            .about__reverse {
+                background: url(../source/img/reverse.png) center / contain;
+                &:hover {
+                    background: url(../source/img/reverse_blue.png) center / contain;
+                }
             }
         }
+        
         // === about scroll area
         .about__scroll-area {
             min-width: 100vw;
             position: absolute;
             height: 300px;
             top: calc(50% - 215px);
-            z-index: 3;
+            z-index: 10;
             cursor: pointer;
         }
         // === about content
@@ -196,7 +289,6 @@ body {
             top: -115px;
             left: -185px;
             transform: translateX(1000px);
-            z-index: 1;
             // === about slider
             .about-slider_moving {
                 transition: all .3s;
@@ -208,6 +300,7 @@ body {
                 gap: 1vw;
                 left: 0px;
                 position: relative;
+                z-index: 1;
                 // === about slider item
                 .about-slider__item {
                     min-width: 100%;
@@ -228,7 +321,7 @@ body {
                     }  
                     // === about slider item text 
                     .about__text {
-                        font-weight: 500;
+                        font-weight: 400;
                         font-size: 16px;
                         line-height: 24px;
                         margin-bottom: 12px;
@@ -253,21 +346,16 @@ body {
         padding: 150px 0;
         display: flex;
         flex-direction: row;
+        align-items: flex-start;
         // === 15game field
         .git15__info {
             margin: 25px;
             .git15__header {
-                font-size: 32px;
-                font-weight: 500;
-                color: #fff;
-                background-color: $second-color;
-                border-radius: 15px;
-                width: fit-content;
-                padding: 5px 15px;
+                @include section-header;
                 margin-bottom: 16px;
             }
             .git15__text {
-                font-weight: 500;
+                font-weight: 400;
                 font-size: 16px;
                 line-height: 24px;
                 padding: 0 25px;
@@ -353,23 +441,19 @@ body {
         padding: 150px 0;
         display: flex;
         flex-direction: column;
+        align-items: center;
         // === memo info
         .memo__info {
             margin-bottom: 25px;
+            align-self: self-start;
             // === memo header
             .memo__header {
-                font-size: 32px;
-                font-weight: 500;
-                color: #fff;
-                background-color: $second-color;
-                border-radius: 15px;
-                width: fit-content;
-                padding: 5px 15px;
+                @include section-header;
                 margin-bottom: 16px;
             }
             // === memo text
             .memo_text {
-                font-weight: 500;
+                font-weight: 400;
                 font-size: 16px;
                 line-height: 24px;
                 padding: 0 15px;
@@ -480,6 +564,7 @@ body {
         .memo__buttons {
             display: flex;
             justify-content: flex-end;
+            align-self: flex-end;
             gap: 15px;
             margin-top: 15px;
             .memo__hint, .memo__replay {
@@ -529,54 +614,20 @@ body {
 // ============================================================================
 
 .skills {
+    padding: 0 50px;
     .skills__container {
         padding: 150px 0;
         display: flex;
         flex-direction: column;
         position: relative;
         .skills__header {
-            font-size: 32px;
-            font-weight: 500;
-            color: #fff;
-            background-color: $second-color;
-            border-radius: 15px;
-            width: fit-content;
-            padding: 5px 15px;
-            margin: 0 0 35px 150px;
+            @include section-header;
+            margin: 0 auto 35px;
         }
-        .skill-slider__buttons {
-            // opacity: 0;
-            transition: all .2s;
-            .skill-slider__button {
-                width: 50px;
-                height: 50px;
-                position: absolute;
-                display: block;
-                border: none;
-                background: url(../source/img/arrow.png) center/contain no-repeat;
-                bottom: 145px;
-                transition: all .2s;
-                cursor: pointer;
-                &:hover {
-                    background: url(../source/img/arrow_blue.png) center/contain no-repeat;
-                    transition: all .2s;
-                }
-                &:active {
-                    transform: scale(.95);
-                }
-            }
-            .skill-slider__button_left {
-                left: 60px;
-                transform: rotateZ(180deg);
-                &:active {
-                    transform: scale(.95) rotateZ(180deg);
-                }
-            }
-            .skill-slider__button_right {
-                right: 60px;
-            }
-        }
+        
         .skills__slider {
+            display: flex;
+            justify-content: center;
             width: 100%;
             overflow: hidden;
             margin-bottom: 50px;
@@ -586,21 +637,23 @@ body {
             .skill-slider__row {
                 display: flex;
                 position: relative;
+                max-width: 100%;
+                max-height: 450px;
                 .skill-slider__item {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     align-items: center;
                     min-width: 100%;
+                    box-sizing: border-box;
+                    padding: 0 5px;
                     .skill-slider__info {
-                        padding-left: 35px;
-                        .skill-slider__header, .skill-slider__text {
+                        .skill-slider__header {
                             font-weight: 500;
                             font-size: 32px;
                             margin-bottom: 20px;
                         }
                         .skill-slider__text {
-                            font-size: 24px;
-                            line-height: 28px;
+                            @include section-text;
                             margin-bottom: 12px;
                         
                     }
@@ -612,17 +665,6 @@ body {
                             width: 100%;
                             object-fit: contain;
                             object-position: 50%;   
-                        }
-                        .video__example {
-                            position: absolute;
-                            top: calc(50% - 35px);
-                            left: 20%;
-                            transform: rotate(-25deg);
-                            text-transform: uppercase;
-                            font-size: 70px;
-                            color: #fff;
-                            opacity: 0.7;
-                            letter-spacing: 25px;
                         }
                     }
                     .skill-slider__responsive {
@@ -644,42 +686,67 @@ body {
         }
         .skill-slider__remote {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            gap: 25px;
-            .skill-slider__dot {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                border: 2px solid $second-color;
+            padding: 0 50px;
+            .skill-slider__button {
+                width: 50px;
+                height: 50px;
+                display: block;
+                border: none;
+                background: url(../source/img/arrow.png) center/contain no-repeat;
+                transition: all .2s;
                 cursor: pointer;
-                position: relative;
-                &:hover::before {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background-image: $blue-gradient;
-                    position: absolute;
-                    bottom: calc(50% - 4px);
-                    left: calc(50% - 4px);
-                }                
-            }
-            .skill-slider__dot_active {
-                &::after {
-                    content: '';
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background-color: $second-color;
-                    position: absolute;
-                    bottom: calc(50% - 4px);
-                    left: calc(50% - 4px);
+                &:hover {
+                    background: url(../source/img/arrow_blue.png) center/contain no-repeat;
+                    transition: all .2s;
+                }
+                &:active {
+                    transform: scale(.95);
                 }
             }
-        }
-        &:hover .skill-slider__buttons {
-            opacity: 1;
+            .skill-slider__button_left {
+                transform: rotateZ(180deg);
+                &:active {
+                    transform: scale(.95) rotateZ(180deg);
+                }
+            }
+            .skill-slider__dots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 25px;
+                .skill-slider__dot {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    border: 2px solid $second-color-light;
+                    cursor: pointer;
+                    position: relative;
+                    &:hover::before {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-image: $blue-gradient;
+                        position: absolute;
+                        bottom: calc(50% - 4px);
+                        left: calc(50% - 4px);
+                    }                
+                }
+                .skill-slider__dot_active {
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background-color: $second-color-light;
+                        position: absolute;
+                        bottom: calc(50% - 4px);
+                        left: calc(50% - 4px);
+                    }
+                }
+            }
         }
     }
 }
@@ -694,26 +761,17 @@ body {
         display: flex;
         justify-content: center;
         .iwant__info {
-            padding: 35px 35px;
+            padding: 35px;
             background-color: #fff;
             border-radius: 35px;
             width: 65%;
             box-shadow: 5px 5px 15px rgba($color: $second-color, $alpha: .2);
             .iwant__header {
-                font-size: 32px;
-                font-weight: 500;
-                color: #fff;
-                background-color: $second-color;
-                border-radius: 15px;
-                width: fit-content;
-                padding: 5px 15px;
-                margin-bottom: 45px;
-                margin-left: 55%;
+                @include section-header;
+                margin: 0 auto 45px;
             }
             .iwant__text {
-                font-weight: 500;
-                font-size: 24px;
-                line-height: 28px;
+                @include section-text;
                 margin-bottom: 12px;
                 padding: 0 25px;
                 a {

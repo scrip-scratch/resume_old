@@ -3,17 +3,15 @@
 const aboutSlider = document.querySelector('.about-slider');
 const aboutSliderScrollArea = document.querySelector('.about__scroll-area');
 const aboutSliderPlayStop = document.querySelector('.about__stop-play');
+const aboutSliderReverse = document.querySelector('.about__reverse');
 let isMoving = true;
 // ==== about slider interval move 
 
 function aboutSliderMove () {
     aboutSlider.classList.add('about-slider_moving');
     let offset = aboutSlider.offsetLeft;
-    if (+offset < -2500) {
-        aboutSlider.style.left = "500px";
-    } else {
-        aboutSlider.style.left = `${offset - 4}px`;   
-    }
+    aboutSlider.style.left = `${offset - 4}px`;   
+
 }
 
 let startSliderMove = setInterval(aboutSliderMove, 100);
@@ -29,6 +27,14 @@ function aboutSliderPlayToggle () {
 }
 
 aboutSliderPlayStop.addEventListener('click', aboutSliderPlayToggle);
+
+aboutSliderReverse.addEventListener('click', () => {
+    clearInterval(startSliderMove);
+    aboutSlider.style.left = "0px";
+    setTimeout(() => {
+        startSliderMove = setInterval(aboutSliderMove, 100);
+    }, 200);  
+})
 
 // ==== about slider wheel scroll
 
@@ -129,7 +135,7 @@ const slider = document.querySelector('.skill-slider__row');
 const sliderItems = document.querySelectorAll('.skill-slider__item');
 const sliderButtonPrev = document.querySelector('.skill-slider__button_left');
 const sliderButtonNext = document.querySelector('.skill-slider__button_right');
-const sliderDots = document.querySelector('.skill-slider__remote');
+const sliderDots = document.querySelector('.skill-slider__dots');
 
 slide(slider, sliderItems, sliderButtonPrev, sliderButtonNext, sliderDots);
 
@@ -212,8 +218,10 @@ function slide(wrapper, items, prev, next, dots) {
     }
 
     window.addEventListener('resize', function(event) {
-        slideSize = items[0].offsetWidth;
-        shiftSlide(1);
+        this.setTimeout(() => {
+            slideSize = items[0].offsetWidth; 
+            shiftByDot (0);
+        }, 100)   
     }, true);
 }
 
@@ -230,4 +238,53 @@ footer.addEventListener('click', () => {
         behavior: 'smooth',
         block: 'start'
     });
+})
+
+
+// ==================================== burger active ===========================================
+
+const headerBurger = document.querySelector('.header__burger');
+const headerNav = document.querySelector('.header__nav');
+
+headerBurger.addEventListener('click', () => {
+    headerBurger.classList.toggle('header__burger_active');
+    headerNav.classList.toggle('header__nav_showed');
+})
+
+// ==================================== animate by scroll ===========================================
+
+const observerOption = {threshold: 0.2};
+
+const elementsClasses = ['.git15__container', '.memo__container', '.skills__container', '.iwant__container'];
+
+let elementsForObserve = [];
+
+elementsClasses.forEach(elementClass => {
+    let element = document.querySelector(elementClass);
+    elementsForObserve.push(element);
+})
+
+hideForObserver(elementsForObserve);
+
+function hideForObserver (elements) {
+    elements.forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(25px)';
+        element.style.transition = 'all .7s'
+    })
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const block = entry.target;
+            block.style.opacity = '1';
+            block.style.transform = 'translateY(0)';
+            observer.unobserve(block);
+        }
+    })
+}, observerOption)
+
+elementsForObserve.forEach(i => {
+    observer.observe(i);
 })
