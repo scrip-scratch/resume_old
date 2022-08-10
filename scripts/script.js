@@ -60,40 +60,30 @@ aboutSliderScrollArea.addEventListener('mouseup', () => {
     aboutSliderScrollArea.style.cursor = 'grab';
 })
 
-aboutSliderScrollArea.addEventListener('mousedown', (e) => {
+aboutSliderScrollArea.addEventListener('pointerdown', (e) => {
     sliderPressed = true;
     clearInterval(startSliderMove);
     aboutSlider.classList.remove('about-slider_moving');
-
     startX = e.offsetX - aboutSlider.offsetLeft;
-
     aboutSliderScrollArea.style.cursor = 'grabbing';
  
 })
 
-aboutSliderScrollArea.addEventListener('mousemove', (e) => {
+aboutSliderScrollArea.addEventListener('pointermove', (e) => {
     if (!sliderPressed) return;
     e.preventDefault();
-
     currX = e.offsetX;
     aboutSlider.style.left = `${currX - startX}px`;
 })
 
-
-window.addEventListener('mouseup', () => {
+window.addEventListener('pointerup', () => {
     if (!sliderPressed) return;
     sliderPressed = false;
     if (isMoving == true) startSliderMove = setInterval(aboutSliderMove, 100);
     aboutSlider.classList.add('about-slider_moving');
 })
 
-
-
-
-
-
-
-// ================================  mess header string ================
+// ================================  mess header string ================================
 
 const headerName = document.querySelector('.header__name');
 const headerProfession = document.querySelector('.header__profession');
@@ -124,12 +114,6 @@ headerName.addEventListener('mouseout', () => {
 
 
 // ==================================== skill slider =====================================
-
-
-// находим блок точек страниц слайдера
-
-// создаем и добавляем в блок точку к каждому элементу слайдера 
-
 
 const slider = document.querySelector('.skill-slider__row');
 const sliderItems = document.querySelectorAll('.skill-slider__item');
@@ -230,14 +214,13 @@ function slide(wrapper, items, prev, next, dots) {
 // ==================================== footer smooth scroll to header =====================================
 
 const footer = document.querySelector('.footer');
-const header = document.querySelector('.header');
 
 footer.addEventListener('click', () => {
-
-    header.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
 })
 
 
@@ -285,6 +268,9 @@ const observer = new IntersectionObserver((entries, observer) => {
     })
 }, observerOption)
 
-elementsForObserve.forEach(i => {
-    observer.observe(i);
+window.addEventListener('DOMContentLoaded', () => {
+    elementsForObserve.forEach(i => {
+        observer.observe(i);
+    })    
 })
+

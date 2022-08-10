@@ -282,6 +282,7 @@ body {
             top: calc(50% - 215px);
             z-index: 10;
             cursor: pointer;
+            touch-action: none;
         }
         // === about content
         .about__content {
@@ -475,6 +476,7 @@ body {
                 width: 15%;
                 height: 15%;
                 perspective: 15%;
+                -webkit-perspective: 15%;
                 position: relative;  
                 cursor: pointer;
                 transition: all 0.6s;
@@ -483,6 +485,7 @@ body {
             // === memo cell front back        
             .memo__cell_front, .memo__cell_back {
                 backface-visibility: hidden;
+                -webkit-backface-visibility: hidden;
                 position: absolute;
                 top: 0;
                 bottom: 0;

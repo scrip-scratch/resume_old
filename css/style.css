@@ -195,7 +195,8 @@ body {
       height: 300px;
       top: calc(50% - 215px);
       z-index: 10;
-      cursor: pointer; }
+      cursor: pointer;
+      touch-action: none; }
     .about .about__container .about__content {
       position: relative;
       top: -115px;
@@ -349,12 +350,14 @@ body {
         width: 15%;
         height: 15%;
         perspective: 15%;
+        -webkit-perspective: 15%;
         position: relative;
         cursor: pointer;
         transition: all 0.6s;
         transform-style: preserve-3d; }
       .memo .memo__container .memo__game .memo__cell_front, .memo .memo__container .memo__game .memo__cell_back {
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         position: absolute;
         top: 0;
         bottom: 0;
