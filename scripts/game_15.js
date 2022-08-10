@@ -1,7 +1,7 @@
 const field_15 = document.querySelector('.git15__game');
 
 function startGame15 (field) {
-    
+    field.innerHTML = '';
     const cellSize = field.offsetWidth / 4;
 
     const empty = {
