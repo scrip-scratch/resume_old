@@ -51,6 +51,7 @@ body {
     border: none;
     background: none;
     cursor: pointer;
+    padding: 0;
     &:active {
         transform: scale(.95);
     }
@@ -102,7 +103,7 @@ body {
 .header {
     width: 100vw;
     background-color: #fff;
-    height: 125px;
+    height: 10vh;
     position: relative;
     z-index: 10;
     // === header container
@@ -200,26 +201,27 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 100px 0 0;
         position: relative;
         overflow: hidden;
         // === about image
         .about__image {
-            position: relative;
+            position: absolute;
             z-index: 5;
             transform: translateY(100vh);
             pointer-events: none;
-            bottom: -20px;
+            height: 90%;
+            bottom: 0;
+            left: 15%;
             img {
-                width: 90%;
+                height: 100%;
             }
         }
         // === about stop-play button
         .about__buttons {
             display: flex;
             position: absolute;
-            right: 150px;
-            bottom: 75px;
+            left: 40%;
+            bottom: 10vh;
             gap: 15px;
             .about__stop-play, .about__reverse {   
                 @include btn-with-svg;
@@ -230,17 +232,15 @@ body {
             min-width: 100vw;
             position: absolute;
             height: 300px;
-            top: calc(50% - 215px);
             z-index: 10;
             cursor: pointer;
-            touch-action: none;
+            touch-action: none; 
         }
         // === about content
         .about__content {
             position: relative;
-            top: -115px;
-            left: -185px;
             transform: translateX(1000px);
+            margin: 10vh 0 25vh;
             // === about slider
             .about-slider_moving {
                 transition: all .3s;
@@ -295,61 +295,53 @@ body {
     background: url(../source/img/pattern-white-frost-wallpaper.png) center no-repeat;
     // === 15game container
     .git15__container {
-        padding: 150px 0;
+        padding: 10vh 0;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        // === 15game field
+        gap: 15px;
+        // === 15game info
         .git15__info {
-            margin: 25px;
             .git15__header {
                 @include section-header;
-                margin-bottom: 16px;
+                margin: 0 auto 16px;
             }
             .git15__text {
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 24px;
-                padding: 0 25px;
                 a {
                     color: $second-color;
                 }
             }
         }
-        .git15__game-container {
+        // === 15game game
+        .git15__game {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+            z-index: 5;
+            // === 15game cell
+            .cell {
+                width: 100px;
+                height: 100px;
+                border: 2px solid #fff;
+                background-repeat: no-repeat;
+                background-size: contain;
+                box-sizing: border-box;
+                position: absolute;
+                cursor: pointer;
+                transition: all .3s;
+            }          
+        }
+        // === 15game buttons
+        .git15__buttons {
             display: flex;
-            .git15__game {
-                position: relative;
-                width: 400px;
-                height: 400px;
-                background-color: #fff;
-                z-index: 5;
-                // === 15game cell
-                .cell {
-                    width: 100px;
-                    height: 100px;
-                    border: 2px solid #fff;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    box-sizing: border-box;
-                    position: absolute;
-                    cursor: pointer;
-                    transition: all .3s;
-                }          
-            }
-            // === 15game buttons
-            .git15__buttons {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-                height: fit-content;
-                padding: 15px 5px;
-                margin-left: 15px;
-                gap: 15px;
-                .git15__shuffle, .git15__order {
-                    @include btn-with-svg;
-                }  
-            } 
+            flex-direction: column;
+            margin: 5px 0 0;
+            gap: 10px;
+            .git15__shuffle, .git15__order {
+                @include btn-with-svg;
+            }  
         }   
     }
     
@@ -365,18 +357,16 @@ body {
     background: url('../source/img/background_pattern.png') 0 0/400px 400px repeat;
     // === memo container
     .memo__container {
-        padding: 150px 0;
+        padding: 10vh 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        gap: 15px;
         // === memo info
         .memo__info {
-            margin-bottom: 25px;
             align-self: self-start;
             // === memo header
             .memo__header {
                 @include section-header;
-                margin-bottom: 16px;
+                margin: 0 auto 16px;
             }
             // === memo text
             .memo_text {
@@ -388,19 +378,18 @@ body {
         }
         // === memo game
         .memo__game {
-            width: 700px;
-            height: 700px;
-            background-color: #fff;
+            width: 400px;
+            height: 400px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
             position: relative;
-            padding: 5px;
+            gap: 5px;
             // === memo cell
             .memo__cell {
-                width: 15%;
-                height: 15%;
+                width: 23%;
+                height: 23%;
                 perspective: 15%;
                 -webkit-perspective: 15%;
                 position: relative;  
@@ -430,72 +419,71 @@ body {
             .memo__cell_turn {
                 transform: rotateY(180deg);
             }
+                    // === memo cell images
+            .memo__html {
+                background: #fff url(../source/img/stack/html.png) center/80% no-repeat;
+            }
+            .memo__css {
+                background: #fff url(../source/img/stack/css.png) center/80% no-repeat;
+            }
+            .memo__js {
+                background: #fff url(../source/img/stack/js.png) center/80% no-repeat;
+            }
+            .memo__figma {
+                background: #fff url(../source/img/stack/figma.png) center/80% no-repeat;
+            }
+            .memo__react {
+                background: #fff url(../source/img/stack/react.png) center/80% no-repeat;
+            }
+            .memo__sass {
+                background: #fff url(../source/img/stack/sass.png) center/80% no-repeat;
+            }
+            .memo__gulp {
+                background: #fff url(../source/img/stack/gulp.png) center/80% no-repeat;
+            }
+            .memo__postgress {
+                background: #fff url(../source/img/stack/postgress.png) center/80% no-repeat;
+            }
+            .memo__nodejs {
+                background: #fff url(../source/img/stack/nodejs.png) center/80% no-repeat;
+            }
+            .memo__photoshop {
+                background: #fff url(../source/img/stack/photoshop.png) center/80% no-repeat;
+            }
+            .memo__git {
+                background: #fff url(../source/img/stack/git.png) center/80% no-repeat;
+            }
+            .memo__npm {
+                background: #fff url(../source/img/stack/npm.png) center/80% no-repeat;
+            }
+            .memo__mysql {
+                background: #fff url(../source/img/stack/mysql.png) center/80% no-repeat;
+            }
+            .memo__graph {
+                background: #fff url(../source/img/stack/graphql.png) center/80% no-repeat;
+            }
+            .memo__aftereffect {
+                background: #fff url(../source/img/stack/aftereffect.png) center/80% no-repeat;
+            }
+            .memo__bem {
+                background: #fff url(../source/img/stack/bem.png) center/80% no-repeat;
+            }
+            .memo__express {
+                background: #fff url(../source/img/stack/express.png) center/80% no-repeat;
+            }
+            .memo__ts {
+                background: #fff url(../source/img/stack/ts.png) center/80% no-repeat;
+            }
+            .memo__redux {
+                background: #fff url(../source/img/stack/redux.png) center/80% no-repeat;
+            }
         }
-        // === memo cell images
-        .memo__html {
-            background: #fff url(../source/img/stack/html.png) center/80% no-repeat;
-        }
-        .memo__css {
-            background: #fff url(../source/img/stack/css.png) center/80% no-repeat;
-        }
-        .memo__js {
-            background: #fff url(../source/img/stack/js.png) center/80% no-repeat;
-        }
-        .memo__figma {
-            background: #fff url(../source/img/stack/figma.png) center/80% no-repeat;
-        }
-        .memo__react {
-            background: #fff url(../source/img/stack/react.png) center/80% no-repeat;
-        }
-        .memo__sass {
-            background: #fff url(../source/img/stack/sass.png) center/80% no-repeat;
-        }
-        .memo__gulp {
-            background: #fff url(../source/img/stack/gulp.png) center/80% no-repeat;
-        }
-        .memo__postgress {
-            background: #fff url(../source/img/stack/postgress.png) center/80% no-repeat;
-        }
-        .memo__nodejs {
-            background: #fff url(../source/img/stack/nodejs.png) center/80% no-repeat;
-        }
-        .memo__photoshop {
-            background: #fff url(../source/img/stack/photoshop.png) center/80% no-repeat;
-        }
-        .memo__git {
-            background: #fff url(../source/img/stack/git.png) center/80% no-repeat;
-        }
-        .memo__npm {
-            background: #fff url(../source/img/stack/npm.png) center/80% no-repeat;
-        }
-        .memo__mysql {
-            background: #fff url(../source/img/stack/mysql.png) center/80% no-repeat;
-        }
-        .memo__graph {
-            background: #fff url(../source/img/stack/graphql.png) center/80% no-repeat;
-        }
-        .memo__aftereffect {
-            background: #fff url(../source/img/stack/aftereffect.png) center/80% no-repeat;
-        }
-        .memo__bem {
-            background: #fff url(../source/img/stack/bem.png) center/80% no-repeat;
-        }
-        .memo__express {
-            background: #fff url(../source/img/stack/express.png) center/80% no-repeat;
-        }
-        .memo__ts {
-            background: #fff url(../source/img/stack/ts.png) center/80% no-repeat;
-        }
-        .memo__redux {
-            background: #fff url(../source/img/stack/redux.png) center/80% no-repeat;
-        }
-        
+        // === memo buttons
         .memo__buttons {
             display: flex;
-            justify-content: flex-end;
-            align-self: flex-end;
-            gap: 15px;
-            margin-top: 15px;
+            flex-direction: column;
+            gap: 10px;
+            margin: 5px 0 0;
             .memo__hint, .memo__replay {
                 @include btn-with-svg;
             }
@@ -521,17 +509,18 @@ body {
 // ============================================================================
 
 .skills {
-    padding: 0 50px;
+    padding: 0 5vh;
     .skills__container {
-        padding: 150px 0;
+        padding: 10vh 0;
         display: flex;
         flex-direction: column;
         position: relative;
+        // === skills header
         .skills__header {
             @include section-header;
             margin: 0 auto 35px;
         }
-        
+        // === skills slider
         .skills__slider {
             display: flex;
             justify-content: center;
@@ -541,11 +530,13 @@ body {
             .skill-slider__shifting {
                 transition: all .3s;
             }
+            // === skills slider row
             .skill-slider__row {
                 display: flex;
                 position: relative;
                 max-width: 100%;
-                max-height: 450px;
+                max-height: 50vh;
+                // === skills slider item
                 .skill-slider__item {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
@@ -553,18 +544,22 @@ body {
                     min-width: 100%;
                     box-sizing: border-box;
                     padding: 0 5px;
+                    // === skills slider item info
                     .skill-slider__info {
+                        padding-right: 25px;
+                        // === skills slider item header
                         .skill-slider__header {
                             font-weight: 500;
                             font-size: 32px;
                             margin-bottom: 20px;
                         }
+                        // === skills slider item text
                         .skill-slider__text {
                             @include section-text;
-                            margin-bottom: 12px;
-                        
+                            margin-bottom: 12px;                        
                     }
                     }
+                    // === skills slider item image
                     .skill-slider__image {
                         width: 100%;
                         position: relative;
@@ -576,7 +571,7 @@ body {
                     }
                     .skill-slider__responsive {
                         width: 100%;
-                        height: 450px;
+                        height: 100%;
                         position: relative;
                         overflow-y: scroll;
                         img {
@@ -587,15 +582,15 @@ body {
                         } 
                     }
                 }
-            }
-
-            
+            }  
         }
+        // === skills slider remote
         .skill-slider__remote {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 50px;
+            // === skills slider buttons
             .skill-slider__button {
                 @include btn-with-svg;
             }
@@ -605,6 +600,7 @@ body {
                     transform: scale(.95) rotateZ(180deg);
                 }
             }
+            // === skills slider dots
             .skill-slider__dots {
                 display: flex;
                 justify-content: center;
@@ -651,19 +647,22 @@ body {
     background-color: #efefef;
     background: url(../source/img/pattern-white-frost-wallpaper.png) center no-repeat;
     .iwant__container {
-        padding: 150px 0;
+        padding: 10vh 0;
         display: flex;
         justify-content: center;
+        // === iwant info
         .iwant__info {
             padding: 35px;
             background-color: #fff;
             border-radius: 35px;
             width: 65%;
             box-shadow: 5px 5px 15px rgba($color: $second-color, $alpha: .2);
+            // === iwant header
             .iwant__header {
                 @include section-header;
                 margin: 0 auto 45px;
             }
+            // === iwant text
             .iwant__text {
                 @include section-text;
                 margin-bottom: 12px;

@@ -48,7 +48,7 @@ body {
 .header {
   width: 100vw;
   background-color: #fff;
-  height: 125px;
+  height: 10vh;
   position: relative;
   z-index: 10; }
   .header .header__container {
@@ -114,7 +114,8 @@ body {
       .header .header__container .header__nav .header__link {
         border: none;
         background: none;
-        cursor: pointer; }
+        cursor: pointer;
+        padding: 0; }
         .header .header__container .header__nav .header__link:active {
           transform: scale(0.95); }
         .header .header__container .header__nav .header__link .svg__btn {
@@ -131,27 +132,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 0 0;
     position: relative;
     overflow: hidden; }
     .about .about__container .about__image {
-      position: relative;
+      position: absolute;
       z-index: 5;
       transform: translateY(100vh);
       pointer-events: none;
-      bottom: -20px; }
+      height: 90%;
+      bottom: 0;
+      left: 15%; }
       .about .about__container .about__image img {
-        width: 90%; }
+        height: 100%; }
     .about .about__container .about__buttons {
       display: flex;
       position: absolute;
-      right: 150px;
-      bottom: 75px;
+      left: 40%;
+      bottom: 10vh;
       gap: 15px; }
       .about .about__container .about__buttons .about__stop-play, .about .about__container .about__buttons .about__reverse {
         border: none;
         background: none;
-        cursor: pointer; }
+        cursor: pointer;
+        padding: 0; }
         .about .about__container .about__buttons .about__stop-play:active, .about .about__container .about__buttons .about__reverse:active {
           transform: scale(0.95); }
         .about .about__container .about__buttons .about__stop-play .svg__btn, .about .about__container .about__buttons .about__reverse .svg__btn {
@@ -164,15 +167,13 @@ body {
       min-width: 100vw;
       position: absolute;
       height: 300px;
-      top: calc(50% - 215px);
       z-index: 10;
       cursor: pointer;
       touch-action: none; }
     .about .about__container .about__content {
       position: relative;
-      top: -115px;
-      left: -185px;
-      transform: translateX(1000px); }
+      transform: translateX(1000px);
+      margin: 10vh 0 25vh; }
       .about .about__container .about__content .about-slider_moving {
         transition: all .3s; }
       .about .about__container .about__content .about-slider {
@@ -210,66 +211,58 @@ body {
   background-color: #efefef;
   background: url(../source/img/pattern-white-frost-wallpaper.png) center no-repeat; }
   .git15 .git15__container {
-    padding: 150px 0;
+    padding: 10vh 0;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start; }
-    .git15 .git15__container .git15__info {
-      margin: 25px; }
-      .git15 .git15__container .git15__info .git15__header {
-        font-size: 32px;
-        font-weight: 500;
-        color: #fff;
-        background-color: #343434;
-        border-radius: 15px;
-        width: fit-content;
-        padding: 5px 15px;
-        margin-bottom: 16px; }
-      .git15 .git15__container .git15__info .git15__text {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        padding: 0 25px; }
-        .git15 .git15__container .git15__info .git15__text a {
-          color: #343434; }
-    .git15 .git15__container .git15__game-container {
-      display: flex; }
-      .git15 .git15__container .git15__game-container .git15__game {
-        position: relative;
-        width: 400px;
-        height: 400px;
-        background-color: #fff;
-        z-index: 5; }
-        .git15 .git15__container .git15__game-container .git15__game .cell {
-          width: 100px;
-          height: 100px;
-          border: 2px solid #fff;
-          background-repeat: no-repeat;
-          background-size: contain;
-          box-sizing: border-box;
-          position: absolute;
-          cursor: pointer;
-          transition: all .3s; }
-      .git15 .git15__container .git15__game-container .git15__buttons {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        height: fit-content;
-        padding: 15px 5px;
-        margin-left: 15px;
-        gap: 15px; }
-        .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle, .git15 .git15__container .git15__game-container .git15__buttons .git15__order {
-          border: none;
-          background: none;
-          cursor: pointer; }
-          .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle:active, .git15 .git15__container .git15__game-container .git15__buttons .git15__order:active {
-            transform: scale(0.95); }
-          .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle .svg__btn, .git15 .git15__container .git15__game-container .git15__buttons .git15__order .svg__btn {
-            width: 50px;
-            height: 50px;
-            fill: rgba(52, 52, 52, 0.75); }
-            .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle .svg__btn:hover, .git15 .git15__container .git15__game-container .git15__buttons .git15__order .svg__btn:hover {
-              fill: url(#lgrad); }
+    gap: 15px; }
+    .git15 .git15__container .git15__info .git15__header {
+      font-size: 32px;
+      font-weight: 500;
+      color: #fff;
+      background-color: #343434;
+      border-radius: 15px;
+      width: fit-content;
+      padding: 5px 15px;
+      margin: 0 auto 16px; }
+    .git15 .git15__container .git15__info .git15__text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px; }
+      .git15 .git15__container .git15__info .git15__text a {
+        color: #343434; }
+    .git15 .git15__container .git15__game {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background-color: #fff;
+      z-index: 5; }
+      .git15 .git15__container .git15__game .cell {
+        width: 100px;
+        height: 100px;
+        border: 2px solid #fff;
+        background-repeat: no-repeat;
+        background-size: contain;
+        box-sizing: border-box;
+        position: absolute;
+        cursor: pointer;
+        transition: all .3s; }
+    .git15 .git15__container .git15__buttons {
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0 0;
+      gap: 10px; }
+      .git15 .git15__container .git15__buttons .git15__shuffle, .git15 .git15__container .git15__buttons .git15__order {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0; }
+        .git15 .git15__container .git15__buttons .git15__shuffle:active, .git15 .git15__container .git15__buttons .git15__order:active {
+          transform: scale(0.95); }
+        .git15 .git15__container .git15__buttons .git15__shuffle .svg__btn, .git15 .git15__container .git15__buttons .git15__order .svg__btn {
+          width: 50px;
+          height: 50px;
+          fill: rgba(52, 52, 52, 0.75); }
+          .git15 .git15__container .git15__buttons .git15__shuffle .svg__btn:hover, .git15 .git15__container .git15__buttons .git15__order .svg__btn:hover {
+            fill: url(#lgrad); }
 
 .memo {
   display: flex;
@@ -277,12 +270,10 @@ body {
   align-items: center;
   background: url("../source/img/background_pattern.png") 0 0/400px 400px repeat; }
   .memo .memo__container {
-    padding: 150px 0;
+    padding: 10vh 0;
     display: flex;
-    flex-direction: column;
-    align-items: center; }
+    gap: 15px; }
     .memo .memo__container .memo__info {
-      margin-bottom: 25px;
       align-self: self-start; }
       .memo .memo__container .memo__info .memo__header {
         font-size: 32px;
@@ -292,25 +283,24 @@ body {
         border-radius: 15px;
         width: fit-content;
         padding: 5px 15px;
-        margin-bottom: 16px; }
+        margin: 0 auto 16px; }
       .memo .memo__container .memo__info .memo_text {
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
         padding: 0 15px; }
     .memo .memo__container .memo__game {
-      width: 700px;
-      height: 700px;
-      background-color: #fff;
+      width: 400px;
+      height: 400px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       align-items: center;
       position: relative;
-      padding: 5px; }
+      gap: 5px; }
       .memo .memo__container .memo__game .memo__cell {
-        width: 15%;
-        height: 15%;
+        width: 23%;
+        height: 23%;
         perspective: 15%;
         -webkit-perspective: 15%;
         position: relative;
@@ -333,54 +323,54 @@ body {
         transform: rotateY(180deg); }
       .memo .memo__container .memo__game .memo__cell_turn {
         transform: rotateY(180deg); }
-    .memo .memo__container .memo__html {
-      background: #fff url(../source/img/stack/html.png) center/80% no-repeat; }
-    .memo .memo__container .memo__css {
-      background: #fff url(../source/img/stack/css.png) center/80% no-repeat; }
-    .memo .memo__container .memo__js {
-      background: #fff url(../source/img/stack/js.png) center/80% no-repeat; }
-    .memo .memo__container .memo__figma {
-      background: #fff url(../source/img/stack/figma.png) center/80% no-repeat; }
-    .memo .memo__container .memo__react {
-      background: #fff url(../source/img/stack/react.png) center/80% no-repeat; }
-    .memo .memo__container .memo__sass {
-      background: #fff url(../source/img/stack/sass.png) center/80% no-repeat; }
-    .memo .memo__container .memo__gulp {
-      background: #fff url(../source/img/stack/gulp.png) center/80% no-repeat; }
-    .memo .memo__container .memo__postgress {
-      background: #fff url(../source/img/stack/postgress.png) center/80% no-repeat; }
-    .memo .memo__container .memo__nodejs {
-      background: #fff url(../source/img/stack/nodejs.png) center/80% no-repeat; }
-    .memo .memo__container .memo__photoshop {
-      background: #fff url(../source/img/stack/photoshop.png) center/80% no-repeat; }
-    .memo .memo__container .memo__git {
-      background: #fff url(../source/img/stack/git.png) center/80% no-repeat; }
-    .memo .memo__container .memo__npm {
-      background: #fff url(../source/img/stack/npm.png) center/80% no-repeat; }
-    .memo .memo__container .memo__mysql {
-      background: #fff url(../source/img/stack/mysql.png) center/80% no-repeat; }
-    .memo .memo__container .memo__graph {
-      background: #fff url(../source/img/stack/graphql.png) center/80% no-repeat; }
-    .memo .memo__container .memo__aftereffect {
-      background: #fff url(../source/img/stack/aftereffect.png) center/80% no-repeat; }
-    .memo .memo__container .memo__bem {
-      background: #fff url(../source/img/stack/bem.png) center/80% no-repeat; }
-    .memo .memo__container .memo__express {
-      background: #fff url(../source/img/stack/express.png) center/80% no-repeat; }
-    .memo .memo__container .memo__ts {
-      background: #fff url(../source/img/stack/ts.png) center/80% no-repeat; }
-    .memo .memo__container .memo__redux {
-      background: #fff url(../source/img/stack/redux.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__html {
+        background: #fff url(../source/img/stack/html.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__css {
+        background: #fff url(../source/img/stack/css.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__js {
+        background: #fff url(../source/img/stack/js.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__figma {
+        background: #fff url(../source/img/stack/figma.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__react {
+        background: #fff url(../source/img/stack/react.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__sass {
+        background: #fff url(../source/img/stack/sass.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__gulp {
+        background: #fff url(../source/img/stack/gulp.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__postgress {
+        background: #fff url(../source/img/stack/postgress.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__nodejs {
+        background: #fff url(../source/img/stack/nodejs.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__photoshop {
+        background: #fff url(../source/img/stack/photoshop.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__git {
+        background: #fff url(../source/img/stack/git.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__npm {
+        background: #fff url(../source/img/stack/npm.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__mysql {
+        background: #fff url(../source/img/stack/mysql.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__graph {
+        background: #fff url(../source/img/stack/graphql.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__aftereffect {
+        background: #fff url(../source/img/stack/aftereffect.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__bem {
+        background: #fff url(../source/img/stack/bem.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__express {
+        background: #fff url(../source/img/stack/express.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__ts {
+        background: #fff url(../source/img/stack/ts.png) center/80% no-repeat; }
+      .memo .memo__container .memo__game .memo__redux {
+        background: #fff url(../source/img/stack/redux.png) center/80% no-repeat; }
     .memo .memo__container .memo__buttons {
       display: flex;
-      justify-content: flex-end;
-      align-self: flex-end;
-      gap: 15px;
-      margin-top: 15px; }
+      flex-direction: column;
+      gap: 10px;
+      margin: 5px 0 0; }
       .memo .memo__container .memo__buttons .memo__hint, .memo .memo__container .memo__buttons .memo__replay {
         border: none;
         background: none;
-        cursor: pointer; }
+        cursor: pointer;
+        padding: 0; }
         .memo .memo__container .memo__buttons .memo__hint:active, .memo .memo__container .memo__buttons .memo__replay:active {
           transform: scale(0.95); }
         .memo .memo__container .memo__buttons .memo__hint .svg__btn, .memo .memo__container .memo__buttons .memo__replay .svg__btn {
@@ -402,9 +392,9 @@ body {
         object-position: 50%; }
 
 .skills {
-  padding: 0 50px; }
+  padding: 0 5vh; }
   .skills .skills__container {
-    padding: 150px 0;
+    padding: 10vh 0;
     display: flex;
     flex-direction: column;
     position: relative; }
@@ -429,7 +419,7 @@ body {
         display: flex;
         position: relative;
         max-width: 100%;
-        max-height: 450px; }
+        max-height: 50vh; }
         .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -437,15 +427,17 @@ body {
           min-width: 100%;
           box-sizing: border-box;
           padding: 0 5px; }
-          .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
-            font-weight: 500;
-            font-size: 32px;
-            margin-bottom: 20px; }
-          .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__text {
-            font-weight: 400;
-            font-size: 24px;
-            line-height: 28px;
-            margin-bottom: 12px; }
+          .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info {
+            padding-right: 25px; }
+            .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
+              font-weight: 500;
+              font-size: 32px;
+              margin-bottom: 20px; }
+            .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__text {
+              font-weight: 400;
+              font-size: 24px;
+              line-height: 28px;
+              margin-bottom: 12px; }
           .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__image {
             width: 100%;
             position: relative; }
@@ -455,7 +447,7 @@ body {
               object-position: 50%; }
           .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__responsive {
             width: 100%;
-            height: 450px;
+            height: 100%;
             position: relative;
             overflow-y: scroll; }
             .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__responsive img {
@@ -471,7 +463,8 @@ body {
       .skills .skills__container .skill-slider__remote .skill-slider__button {
         border: none;
         background: none;
-        cursor: pointer; }
+        cursor: pointer;
+        padding: 0; }
         .skills .skills__container .skill-slider__remote .skill-slider__button:active {
           transform: scale(0.95); }
         .skills .skills__container .skill-slider__remote .skill-slider__button .svg__btn {
@@ -519,7 +512,7 @@ body {
   background-color: #efefef;
   background: url(../source/img/pattern-white-frost-wallpaper.png) center no-repeat; }
   .iwant .iwant__container {
-    padding: 150px 0;
+    padding: 10vh 0;
     display: flex;
     justify-content: center; }
     .iwant .iwant__container .iwant__info {
@@ -636,7 +629,7 @@ body {
   .container {
     padding: 0 50px; }
   .header {
-    height: 100px; } }
+    height: 15vh; } }
 
 @media (max-width: 1240px) {
   .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
@@ -646,25 +639,37 @@ body {
     line-height: 20px; } }
 
 @media (max-width: 970px) {
-  .header .header__container .header__info {
-    flex-direction: column;
-    align-items: start;
-    gap: 0; }
+  .header {
+    height: 75px; }
+    .header .header__container .header__info {
+      flex-direction: column;
+      align-items: start;
+      gap: 0; }
+  .about .about__container .about__image {
+    left: 10%; }
+  .about .about__container .about__buttons {
+    left: 50%; }
   .git15 .git15__container {
-    padding: 100px 0;
     flex-direction: column;
     align-items: center; }
-    .git15 .git15__container .git15__info {
-      margin: 25px 0; }
+    .git15 .git15__container .git15__buttons {
+      flex-direction: row;
+      align-self: self-end; }
   .memo .memo__container {
-    padding: 100px 0; }
-  .skills .skills__container {
-    padding: 100px 0; }
-    .skills .skills__container .skills__slider .skill-slider__row {
-      max-height: 80vw; }
-      .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 2fr; }
+    flex-direction: column; }
+    .memo .memo__container .memo__buttons {
+      flex-direction: row;
+      align-self: self-end; }
+  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
+    font-size: 18px;
+    margin-bottom: 12px; }
+  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__text {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 8px; }
+  .skills .skills__container .skill-slider__remote .skill-slider__button .svg__btn {
+    width: 40px;
+    height: 40px; }
   .iwant .iwant__container .iwant__info {
     width: 75%;
     padding: 35px 25px; }
@@ -674,77 +679,88 @@ body {
       padding: 0 20px; } }
 
 @media (max-width: 800px) {
-  .memo .memo__container .memo__game {
-    width: 85vw;
-    height: 85vw; }
-    .memo .memo__container .memo__game .memo__cell {
-      width: 15%;
-      height: 15%; } }
-
-@media (max-width: 760px) {
   .header .header__container .header__burger {
     display: flex; }
   .header .header__container .header__nav {
-    flex-direction: column;
     position: absolute;
     justify-content: flex-end;
     gap: 10px;
-    top: 100px;
-    right: 40px;
+    top: 75px;
+    right: 3vw;
     padding: 15px 5px;
     border-radius: 15px;
     background-color: #fff;
     box-shadow: 5px 5px 15px rgba(52, 52, 52, 0.2);
-    transform: rotate(-90deg) translate(240px, 240px);
+    transform: translate(90vw, 0);
     transition: all .2s; }
   .header .header__container .header__nav_showed {
-    transform: rotate(0deg) translate(0px, 0px); }
+    transform: translate(0px, 0px); }
+  .about .about__container .about__image {
+    left: 0; }
+  .about .about__container .about__scroll-area {
+    top: 10%;
+    height: 215px; }
+  .about .about__container .about__content {
+    margin: 5vh 0 25vh; }
+    .about .about__container .about__content .about-slider .about-slider__item {
+      height: 215px;
+      padding: 15px 15px 25px; }
+      .about .about__container .about__content .about-slider .about-slider__item .about-slider__image {
+        width: 65%;
+        margin: 0;
+        left: 30%; }
+      .about .about__container .about__content .about-slider .about-slider__item .about__text {
+        margin: 0; }
+  .about .about__container .about__buttons {
+    bottom: 50px; }
+    .about .about__container .about__buttons .about__stop-play .svg__btn, .about .about__container .about__buttons .about__reverse .svg__btn {
+      width: 40px;
+      height: 40px; }
   .git15 .git15__container {
-    padding: 100px 0;
-    flex-direction: column; }
+    flex-direction: row; }
     .git15 .git15__container .git15__info {
-      margin: 25px 0; }
+      align-self: start; }
+      .git15 .git15__container .git15__info .git15__header {
+        font-size: 18px;
+        border-radius: 10px; }
+      .git15 .git15__container .git15__info .git15__text {
+        font-size: 14px; }
+    .git15 .git15__container .git15__buttons {
+      flex-direction: column; }
   .memo .memo__container {
-    padding: 100px 0; }
-  .skills .skills__container {
-    padding: 100px 0; }
-    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 2fr; }
+    flex-direction: row; }
+    .memo .memo__container .memo__info .memo__header {
+      font-size: 18px;
+      border-radius: 10px; }
+    .memo .memo__container .memo__info .memo__text {
+      font-size: 14px; }
+    .memo .memo__container .memo__buttons {
+      flex-direction: column; }
+  .skills .skills__container .skills__slider .skill-slider__row {
+    max-height: 300px; }
+  .skills .skills__container .skill-slider__remote {
+    padding: 0; }
+    .skills .skills__container .skill-slider__remote .skill-slider__dots {
+      gap: 15px; }
   .iwant .iwant__container .iwant__info {
     width: 75%;
     padding: 35px 25px; }
     .iwant .iwant__container .iwant__info .iwant__header {
-      margin: 0 auto 45px; }
-  .skills .skills__container .skill-slider__remote {
-    padding: 0; } }
+      margin: 0 auto 25px; } }
 
-@media (max-width: 650px) {
-  .header .header__container .header__info .header__name {
-    font-size: 24px; }
-  .header .header__container .header__info .header__profession {
-    font-size: 18px; }
-  .about .about__container .about__content .about-slider {
-    width: 260px; }
-    .about .about__container .about__content .about-slider .about-slider__item {
-      height: 260px; }
-      .about .about__container .about__content .about-slider .about-slider__item .about__text {
-        font-size: 14px;
-        line-height: 18px; }
-  .about .about__container .about__buttons {
-    right: 75px;
-    bottom: 25px; }
-  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info {
-    margin-bottom: 12px; }
-    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__header {
-      font-size: 24px;
-      margin-bottom: 12px; }
-    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info .skill-slider__text {
-      font-size: 16px;
-      line-height: 18px;
-      margin-bottom: 8px; }
+@media (max-width: 740px) {
+  .header {
+    height: 75px; }
+    .header .header__container .header__info .header__name {
+      font-size: 24px; }
+    .header .header__container .header__info .header__profession {
+      font-size: 18px; }
+  .git15 .git15__container .git15__info {
+    display: none; }
+  .memo .memo__container .memo__info {
+    display: none; }
   .iwant .iwant__container {
-    padding: 100px 0; }
+    padding: 50px 0; }
     .iwant .iwant__container .iwant__info {
       width: 80%;
       padding: 25px 5px; }
@@ -755,91 +771,52 @@ body {
         line-height: 18px;
         margin-bottom: 8px; } }
 
-@media (max-width: 550px) {
-  .about .about__container {
-    padding: 0; }
-    .about .about__container .about__image {
-      display: none; }
-    .about .about__container .about__scroll-area {
-      top: calc(50% - 170px); }
-    .about .about__container .about__content {
-      top: 0;
-      left: 0;
-      margin: 0 0 100px 0; }
-  .git15 .git15__container {
-    padding: 50px 0; }
-  .skills {
-    padding: 0 25px; }
-    .skills .skills__container {
-      padding: 50px 0; } }
-
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .container {
     padding: 0 25px; }
-  .git15 .git15__container {
-    padding: 50px 0; }
-    .git15 .git15__container .git15__info .git15__header {
-      font-size: 24px;
-      margin: 0 0 12px 0; }
-    .git15 .git15__container .git15__info .git15__text {
+  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
+    grid-template-columns: 1fr; }
+    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__info {
       padding: 0; }
-    .git15 .git15__container .git15__game-container .git15__game {
-      width: 320px;
-      height: 320px; }
-      .git15 .git15__container .git15__game-container .git15__game .cell {
-        width: 80px;
-        height: 80px; }
-  .memo .memo__container .memo__info {
-    margin-bottom: 15px; }
-    .memo .memo__container .memo__info .memo__header {
-      font-size: 24px;
-      margin: 0 0 12px 0; }
-    .memo .memo__container .memo__info .memo__text {
-      padding: 0; }
+    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__responsive {
+      display: none; }
+    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__image {
+      display: none; }
   .footer {
-    padding: 15px 0;
-    font-size: 18px; } }
+    font-size: 18px;
+    padding: 15px 0; } }
+
+@media (max-width: 500px) {
+  .about .about__container .about__image {
+    left: -20%; }
+  .git15 .git15__container {
+    flex-direction: column;
+    padding: 5vh 0; }
+    .git15 .git15__container .git15__info {
+      align-self: start; }
+    .git15 .git15__container .git15__buttons {
+      flex-direction: row; }
+  .memo .memo__container {
+    padding: 5vh 0;
+    flex-direction: column; }
+    .memo .memo__container .memo__buttons {
+      flex-direction: row; } }
 
 @media (max-width: 420px) {
-  .git15 .git15__container .git15__game-container {
+  .git15 .git15__container .git15__game {
+    width: 320px;
+    height: 320px; }
+    .git15 .git15__container .git15__game .cell {
+      width: 80px;
+      height: 80px; }
+  .git15 .git15__container .git15__buttons .git15__shuffle .svg__btn, .git15 .git15__container .git15__buttons .git15__order .svg__btn {
+    width: 35px;
+    height: 35px; }
+  .memo .memo__container {
     flex-direction: column; }
-    .git15 .git15__container .git15__game-container .git15__buttons {
-      flex-direction: row;
-      justify-content: flex-start;
-      margin: 0; }
-  .memo .memo__container .memo__buttons {
-    align-self: flex-end;
-    margin-right: 20px; }
-  .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
-    grid-template-rows: 1fr; }
-    .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__image, .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__responsive {
-      display: none; }
-  .skills .skills__container .skill-slider__remote {
-    padding: 0; }
-    .skills .skills__container .skill-slider__remote .skill-slider__button {
+    .memo .memo__container .memo__game {
+      width: 320px;
+      height: 320px; }
+    .memo .memo__container .memo__buttons .memo__hint .svg__btn, .memo .memo__container .memo__buttons .memo__replay .svg__btn {
       width: 35px;
-      height: 35px; }
-    .skills .skills__container .skill-slider__remote .skill-slider__dots {
-      gap: 15px; }
-      .skills .skills__container .skill-slider__remote .skill-slider__dots .skill-slider__dot {
-        width: 16px;
-        height: 16px; }
-        .skills .skills__container .skill-slider__remote .skill-slider__dots .skill-slider__dot:hover::before {
-          content: '';
-          width: 6px;
-          height: 6px;
-          bottom: calc(50% - 3px);
-          left: calc(50% - 3px); }
-      .skills .skills__container .skill-slider__remote .skill-slider__dots .skill-slider__dot_active::after {
-        content: '';
-        width: 6px;
-        height: 6px;
-        bottom: calc(50% - 3px);
-        left: calc(50% - 3px); } }
-
-@media (max-width: 385px) {
-  .noresponse {
-    display: flex;
-    overflow: hidden; }
-  .wrapper {
-    display: none; } }
+      height: 35px; } }

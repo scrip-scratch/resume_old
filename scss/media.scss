@@ -4,7 +4,7 @@
     }
 
     .header {
-        height: 100px;
+        height: 15vh;
     }
 }
 
@@ -32,6 +32,7 @@
 
 @media (max-width: 970px) {
     .header {
+        height: 75px;
         .header__container {
             .header__info {   
                 flex-direction: column;
@@ -40,33 +41,63 @@
             }
         }
     }  
+
+    .about {
+        .about__container {
+            .about__image {
+                left: 10%;
+            }
+            .about__buttons {
+                left: 50%;
+            }            
+        }
+    }
     
     .git15 {
         .git15__container {
-            padding: 100px 0;
             flex-direction: column;
             align-items: center;
-            .git15__info {
-                margin: 25px 0;
+            .git15__buttons {
+                flex-direction: row;
+                align-self: self-end;
             }
         }
     }
     
     .memo {
         .memo__container {
-            padding: 100px 0;
+            flex-direction: column;
+            .memo__buttons {
+                flex-direction: row;
+                align-self: self-end;
+            }
         }
     }
 
     .skills {
         .skills__container {
-            padding: 100px 0;
             .skills__slider {
                 .skill-slider__row {
-                    max-height: 80vw;
                     .skill-slider__item {
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 1fr 2fr;
+                        .skill-slider__info {
+                            .skill-slider__header {
+                                font-size: 18px;
+                                margin-bottom: 12px;
+                            }
+                            .skill-slider__text {
+                                font-size: 14px;
+                                line-height: 18px;
+                                margin-bottom: 8px;
+                            }
+                        }
+                    }
+                }
+            }
+            .skill-slider__remote {
+                .skill-slider__button {
+                    .svg__btn {
+                        width: 40px;
+                        height: 40px;
                     }
                 }
             }
@@ -90,75 +121,122 @@
 }
 
 @media (max-width: 800px) {
-    .memo {
-        .memo__container {
-            .memo__game {
-                width: 85vw;
-                height: 85vw;
-                .memo__cell {
-                    width: 15%;
-                    height: 15%;
-                }
-            }
-        }
-    }                                            
-}
-
-@media (max-width: 760px) {
     .header {
         .header__container {
             .header__burger {
                 display: flex;
             }
             .header__nav {
-                flex-direction: column;
                 position: absolute;
                 justify-content: flex-end;
                 gap: 10px;
-                top: 100px;
-                right: 40px;
+                top: 75px;
+                right: 3vw;
                 padding: 15px 5px;
                 border-radius: 15px;
                 background-color: #fff;
                 box-shadow: 5px 5px 15px rgba($color: $second-color, $alpha: .2);
-                transform: rotate(-90deg) translate(240px, 240px);
+                transform: translate(90vw, 0);
                 transition: all .2s;
             }
             .header__nav_showed {
-                transform: rotate(0deg) translate(0px, 0px);
+                transform: translate(0px, 0px);
             }
         }
     }  
-    
-    .git15 {
-        .git15__container {
-            padding: 100px 0;
-            flex-direction: column;
-            .git15__info {
-                margin: 25px 0;
+
+    .about {
+        .about__container {
+            .about__image {
+                left: 0;
+            }
+            .about__scroll-area {
+                top: 10%;
+                height: 215px;
+            }
+            .about__content {
+                margin: 5vh 0 25vh;
+                .about-slider {
+                    .about-slider__item {
+                        height: 215px;
+                        padding: 15px 15px 25px;
+                        .about-slider__image {
+                            width: 65%;
+                            margin: 0;
+                            left: 30%;
+                        }
+                        .about__text {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .about__buttons {
+                bottom: 50px;
+                .about__stop-play, .about__reverse {
+                    .svg__btn {
+                        width: 40px;
+                        height: 40px;
+                        
+                    }
+                }
             }
         }
     }
-    
+
+    .git15 {
+        .git15__container {
+            flex-direction: row;
+            .git15__info {
+                align-self: start;
+                .git15__header {
+                    font-size: 18px;
+                    border-radius: 10px;
+                }
+                .git15__text {
+                    font-size: 14px;
+                }
+            }
+            .git15__buttons {
+                flex-direction: column;
+            }
+        }
+    }
+
     .memo {
         .memo__container {
-            padding: 100px 0;
+            flex-direction: row;
+            .memo__info {
+                .memo__header {
+                    font-size: 18px;
+                    border-radius: 10px;
+                }
+                .memo__text {
+                    font-size: 14px;
+                }
+            }
+            .memo__buttons {
+                flex-direction: column;
+            }
         }
     }
 
     .skills {
         .skills__container {
-            padding: 100px 0;
             .skills__slider {
                 .skill-slider__row {
-                    .skill-slider__item {
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 1fr 2fr;
-                    }
+                    max-height: 300px;
+                }
+            }
+            .skill-slider__remote {
+                padding: 0;
+                .skill-slider__dots {
+                    gap: 15px;
                 }
             }
         }
-    } 
+    
+    }
 
     .iwant {
         .iwant__container {
@@ -166,25 +244,18 @@
                 width: 75%;
                 padding: 35px 25px;
                 .iwant__header {
-                    margin: 0 auto 45px;
+                    margin: 0 auto 25px;
                 }
-            }
-        }
-    }
-
-    .skills {
-        .skills__container {
-            .skill-slider__remote {
-                padding: 0;
             }
         }
     }
     
 }
 
-@media (max-width: 650px) {
+@media (max-width: 740px) {
 
     .header {
+        height: 75px;
         .header__container {
             .header__info {   
                 .header__name {
@@ -197,53 +268,25 @@
         }
     } 
 
-    .about {
-        .about__container {
-            .about__content {
-                .about-slider  {
-                    width: 260px;
-                    .about-slider__item {
-                        height: 260px;
-                        .about__text {
-                            font-size: 14px;
-                            line-height: 18px;
-                        }
-                    }
-                }
-            }
-            .about__buttons {
-                right: 75px;
-                bottom: 25px;
+    .git15 {
+        .git15__container {
+            .git15__info {
+                display: none;
             }
         }
     }
 
-    .skills {
-        .skills__container {
-            .skills__slider {
-                .skill-slider__row {
-                    .skill-slider__item {
-                        .skill-slider__info {
-                            margin-bottom: 12px;
-                            .skill-slider__header {
-                                font-size: 24px;
-                                margin-bottom: 12px;
-                            }
-                            .skill-slider__text {
-                                font-size: 16px;
-                                line-height: 18px;
-                                margin-bottom: 8px;
-                            }
-                        }
-                    }
-                }
+    .memo {
+        .memo__container {
+            .memo__info {
+                display: none;
             }
         }
     } 
 
     .iwant {
         .iwant__container {
-            padding: 100px 0;
+            padding: 50px 0;
             .iwant__info {
                 width: 80%;
                 padding: 25px 5px;
@@ -261,115 +304,11 @@
      
 }
 
-@media (max-width: 550px) {
-    .about {
-        .about__container {
-            padding: 0;
-            .about__image {
-                display: none;
-            }
-            .about__scroll-area {
-                top: calc(50% - 170px);
-            }
-            .about__content {
-                top: 0;
-                left: 0;
-                margin: 0 0 100px 0;
-            }
-            
-        }
-    }
 
-    .git15 {
-        .git15__container {
-            padding: 50px 0;
-        }
-    }
-
-    .skills {
-        padding: 0 25px;
-        .skills__container {
-            padding: 50px 0;
-        }
-    }
-
-    
-}
-
-@media (max-width: 500px) {
+@media (max-width: 700px) {
 
     .container {
         padding: 0 25px;
-    }
-
-    .git15 {
-        .git15__container {
-            padding: 50px 0;
-            .git15__info {
-                .git15__header {
-                    font-size: 24px;
-                    margin: 0 0 12px 0;
-                }
-                .git15__text {
-                    padding: 0;
-                }
-            }
-            .git15__game-container {
-                .git15__game {
-                    width: 320px;
-                    height: 320px;
-                    .cell {
-                        width: 80px;
-                        height: 80px;
-                    }
-                }
-            }
-        }
-    }
-
-    .memo {
-        .memo__container {
-            .memo__info {
-                margin-bottom: 15px;
-                .memo__header {
-                    font-size: 24px;
-                    margin: 0 0 12px 0;
-                }
-                .memo__text {
-                    padding: 0;
-                }
-            }
-        }
-    }
-
-    .footer {
-        padding: 15px 0;
-        font-size: 18px;
-    }
-    
-}
-
-@media (max-width: 420px) {
-    .git15 {
-        .git15__container {
-            .git15__game-container {
-                flex-direction: column;
-                .git15__buttons {
-                    flex-direction: row;
-                    justify-content: flex-start;
-                    margin: 0;
-                }
-            }
-        }
-    }
-
-    .memo {
-        .memo__container {
-            .memo__buttons {
-            align-self: flex-end;
-            margin-right: 20px;    
-            }
-        }
     }
 
     .skills {
@@ -377,53 +316,102 @@
             .skills__slider {
                 .skill-slider__row {
                     .skill-slider__item {
-                        grid-template-rows: 1fr;
-                        .skill-slider__image, .skill-slider__responsive {
+                        grid-template-columns: 1fr;
+                        .skill-slider__info {
+                            padding: 0;
+                        }
+                        .skill-slider__responsive {
+                            display: none;
+                        }
+                        .skill-slider__image {
                             display: none;
                         }
                     }
                 }
             }
-            .skill-slider__remote {
-                padding: 0;
-                .skill-slider__button {
-                    width: 35px;
-                    height: 35px;
-                }
-                .skill-slider__dots {
-                    gap: 15px;
-                    .skill-slider__dot {
-                        width: 16px;
-                        height: 16px;
-                        &:hover::before {
-                            content: '';
-                            width: 6px;
-                            height: 6px;
-                            bottom: calc(50% - 3px);
-                            left: calc(50% - 3px);
-                        }                
+        } 
+    }
+
+    .footer {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .about {
+        .about__container {
+            .about__image {
+                left: -20%;
+            }
+        }
+    }
+
+    .git15 {
+        .git15__container {
+            flex-direction: column;
+            padding: 5vh 0;
+            .git15__info {
+                align-self: start;
+            }
+            .git15__buttons {
+                flex-direction: row;
+            }
+        }
+    }
+
+    .memo {
+        .memo__container {
+            padding: 5vh 0;
+            flex-direction: column;
+            .memo__buttons {
+                flex-direction: row;
+            }
+        }
+    } 
+
+}
+
+@media (max-width: 420px) {
+
+    .git15 {
+        .git15__container {
+            .git15__game {
+                width: 320px;
+                height: 320px;
+                .cell {
+                    width: 80px;
+                    height: 80px;
+                }          
+            }
+            .git15__buttons {
+                .git15__shuffle, .git15__order {
+                    .svg__btn {
+                        width: 35px;
+                        height: 35px;
                     }
-                    .skill-slider__dot_active {
-                        &::after {
-                            content: '';
-                            width: 6px;
-                            height: 6px;
-                            bottom: calc(50% - 3px);
-                            left: calc(50% - 3px);
-                        }
+                }  
+            } 
+        }
+    }
+    
+
+    .memo {
+        .memo__container {
+            flex-direction: column;
+            .memo__game {
+                width: 320px;
+                height: 320px;
+            }
+            .memo__buttons {
+                .memo__hint, .memo__replay {
+                    .svg__btn {
+                        width: 35px;
+                        height: 35px;
                     }
                 }
             }
         }
-    }
-}
-
-@media (max-width: 385px) {
-    .noresponse {
-        display: flex;
-        overflow: hidden;
-    }
-    .wrapper {
-        display: none;
     }
 }

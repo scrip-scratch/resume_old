@@ -3,7 +3,7 @@ const winFirework = document.querySelector('.memo__win');
 
 const restartButton = document.querySelector('.memo__replay');
 
-let counter = 36;
+let counter = 16;
 
 restartButton.addEventListener('click', () => {
     memoField.innerHTML = '';
@@ -14,7 +14,7 @@ restartButton.addEventListener('click', () => {
 function gameStart () {
     winFirework.style.display = 'none';
     document.body.appendChild(winFirework);
-    counter = 36;
+    counter = 16;
 
     createMemoCells(memoField);
     shuffleMemoCells(memoField);
@@ -75,7 +75,7 @@ function gameRules () {
 }
 
 function createMemoCells (gameField) {
-    for (let i = 1; i <= 36; i++) {
+    for (let i = 1; i <= 16; i++) {
         // cell 
         let cell = document.createElement('div');
         cell.classList.add('memo__cell');
@@ -96,17 +96,17 @@ function createMemoCells (gameField) {
         if (i > 8 && i <= 10) cellBack.classList.add('memo__react');
         if (i > 10 && i <= 12) cellBack.classList.add('memo__sass');
         if (i > 12 && i <= 14) cellBack.classList.add('memo__gulp');
-        if (i > 14 && i <= 16) cellBack.classList.add('memo__git');
-        if (i > 16 && i <= 18) cellBack.classList.add('memo__npm');
-        if (i > 18 && i <= 20) cellBack.classList.add('memo__photoshop');
-        if (i > 20 && i <= 22) cellBack.classList.add('memo__mysql');
-        if (i > 22 && i <= 24) cellBack.classList.add('memo__graph');
-        if (i > 24 && i <= 26) cellBack.classList.add('memo__aftereffect');
-        if (i > 26 && i <= 28) cellBack.classList.add('memo__bem');
-        if (i > 28 && i <= 30) cellBack.classList.add('memo__express');
-        if (i > 30 && i <= 32) cellBack.classList.add('memo__ts');
-        if (i > 32 && i <= 34) cellBack.classList.add('memo__redux');
-        if (i > 34) cellBack.classList.add('memo__nodejs');
+        if (i > 14 && i <= 16) cellBack.classList.add('memo__npm');
+        // if (i > 16 && i <= 18) cellBack.classList.add('memo__git');
+        // if (i > 18 && i <= 20) cellBack.classList.add('memo__photoshop');
+        // if (i > 20 && i <= 22) cellBack.classList.add('memo__mysql');
+        // if (i > 22 && i <= 24) cellBack.classList.add('memo__graph');
+        // if (i > 24 && i <= 26) cellBack.classList.add('memo__aftereffect');
+        // if (i > 26 && i <= 28) cellBack.classList.add('memo__bem');
+        // if (i > 28 && i <= 30) cellBack.classList.add('memo__express');
+        // if (i > 30 && i <= 32) cellBack.classList.add('memo__ts');
+        // if (i > 32 && i <= 34) cellBack.classList.add('memo__redux');
+        // if (i > 34) cellBack.classList.add('memo__nodejs');
     }
 }
 
@@ -119,10 +119,10 @@ function shuffleMemoCells (gameField) {
 function bigHint () {
     let memoCells = document.querySelectorAll('.memo__cell');
     memoField.removeEventListener('click', gameRules);
-    for (let i = 0; i <= 35; i++) {
+    for (let i = 0; i <= 15; i++) {
         delayTurner(memoCells[i], i * 100);
     }
-    for (let i = 0; i <= 35; i++) {
+    for (let i = 0; i <= 15; i++) {
         delayTurner(memoCells[i], i * 100 + 1500);
     }
     setTimeout(() => {
