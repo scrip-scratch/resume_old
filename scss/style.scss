@@ -47,6 +47,23 @@ body {
     line-height: 28px;
 }
 
+@mixin btn-with-svg {
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:active {
+        transform: scale(.95);
+    }
+    .svg__btn {
+        width: 50px;
+        height: 50px;
+        fill: $second-color-light; 
+        &:hover {
+            fill: url(#lgrad);
+        }
+    }
+}
+
 // ============================================================================
 
 .noresponse {
@@ -167,52 +184,8 @@ body {
             justify-content: flex-end;
             gap: 25px;
             .header__link {
-                cursor: pointer;
-                width: 50px;
-                height: 50px;
-                padding: 5px 0;
-                background-size: contain;
-                border-radius: 50%;
-                transition: all .1s;
-                &:active {
-                    transform: scale(.95);
-                }
+                @include btn-with-svg;
             }
-            .header__link_mail {
-                background-image: url(../source/img/mail.png);
-                &:hover {
-                    background-image: url(../source/img/mail_blue.png);
-                    transition: all .2s;
-                }
-            }
-            .header__link_git {
-                background-image: url(../source/img/git.png);
-                &:hover {
-                    background-image: url(../source/img/git_blue.png);
-                    transition: all .2s
-                }
-            }
-            .header__link_telegram {
-                background-image: url(../source/img/telegram.png);
-                &:hover {
-                    background-image: url(../source/img/telegram_blue.png);
-                    transition: all .2s
-                }
-            }
-            .header__link_instagram {
-                background-image: url(../source/img/instagram.png);
-                &:hover {
-                    background-image: url(../source/img/instagram_blue.png);
-                    transition: all .2s
-                }
-            }
-            .header__link_vk {
-                background-image: url(../source/img/vk.png);
-                &:hover {
-                    background-image: url(../source/img/vk_blue.png);
-                    transition: all .2s
-                }
-            }   
         }
     }
 } 
@@ -249,31 +222,9 @@ body {
             bottom: 75px;
             gap: 15px;
             .about__stop-play, .about__reverse {   
-                cursor: pointer;
-                width: 50px;
-                height: 50px;
-                background-size: contain;
-                border-radius: 50%;
-                border: none;
-                transition: all .2s;
-                &:active {
-                    scale: .95;
-                }   
+                @include btn-with-svg;
             }
-            .about__stop-play {
-                background: url(../source/img/play-pause.png) center / contain;
-                &:hover {
-                    background: url(../source/img/play-pause_blue.png) center / contain;
-                }
-            }
-            .about__reverse {
-                background: url(../source/img/reverse.png) center / contain;
-                &:hover {
-                    background: url(../source/img/reverse_blue.png) center / contain;
-                }
-            }
-        }
-        
+        } 
         // === about scroll area
         .about__scroll-area {
             min-width: 100vw;
@@ -395,34 +346,9 @@ body {
                 padding: 15px 5px;
                 margin-left: 15px;
                 gap: 15px;
-                .git15__button {
-                    width: 50px;
-                    height: 50px;
-                    background-size: contain;
-                    background-color: transparent;
-                    border: none;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    transition: all .2s;
-                }
-                .git15__button:active {
-                    transform: scale(0.95);
-                }
-                .git15__game__shuffle {
-                    background-image: url('../source/img/shuffle.png');
-                    &:hover {
-                        background-image: url('../source/img/shuffle_blue.png');
-                        transition: all .2s;
-                    }
-                }
-                .git15__game__order {
-                    background-image: url('../source/img/odrer.png');
-                    &:hover {
-                        background-image: url('../source/img/odrer_blue.png');
-                        transition: all .2s;
-                    }
-                }
-                
+                .git15__shuffle, .git15__order {
+                    @include btn-with-svg;
+                }  
             } 
         }   
     }
@@ -571,29 +497,7 @@ body {
             gap: 15px;
             margin-top: 15px;
             .memo__hint, .memo__replay {
-                cursor: pointer;
-                width: 60px;
-                height: 60px;
-                padding: 5px 0;
-                background-size: contain;
-                border-radius: 50%;
-                transition: all .1s;
-                border: none;
-                &:active {
-                    transform: scale(.95);
-                }
-            }
-            .memo__hint {
-                background: url(../source/img/flip.png) center/contain;
-                &:hover {
-                    background: url(../source/img/flip_blue.png) center/contain;
-                }
-            }
-            .memo__replay {
-                background: url(../source/img/restart.png) center/contain;
-                &:hover {
-                    background: url(../source/img/restart_blue.png) center/contain;
-                }
+                @include btn-with-svg;
             }
         }
         
@@ -693,20 +597,7 @@ body {
             align-items: center;
             padding: 0 50px;
             .skill-slider__button {
-                width: 50px;
-                height: 50px;
-                display: block;
-                border: none;
-                background: url(../source/img/arrow.png) center/contain no-repeat;
-                transition: all .2s;
-                cursor: pointer;
-                &:hover {
-                    background: url(../source/img/arrow_blue.png) center/contain no-repeat;
-                    transition: all .2s;
-                }
-                &:active {
-                    transform: scale(.95);
-                }
+                @include btn-with-svg;
             }
             .skill-slider__button_left {
                 transform: rotateZ(180deg);

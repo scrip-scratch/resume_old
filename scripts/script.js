@@ -5,13 +5,12 @@ const aboutSliderScrollArea = document.querySelector('.about__scroll-area');
 const aboutSliderPlayStop = document.querySelector('.about__stop-play');
 const aboutSliderReverse = document.querySelector('.about__reverse');
 let isMoving = true;
-// ==== about slider interval move 
 
+// ==== about slider interval move 
 function aboutSliderMove () {
     aboutSlider.classList.add('about-slider_moving');
     let offset = aboutSlider.offsetLeft;
     aboutSlider.style.left = `${offset - 4}px`;   
-
 }
 
 let startSliderMove = setInterval(aboutSliderMove, 100);
@@ -34,6 +33,7 @@ aboutSliderReverse.addEventListener('click', () => {
     setTimeout(() => {
         startSliderMove = setInterval(aboutSliderMove, 100);
     }, 200);  
+    isMoving = true;
 })
 
 // ==== about slider wheel scroll

@@ -17,10 +17,10 @@ function startGame15 (field) {
     create15Cells(field, cells);
     shuffle15Cells(cells);
 
-    const orderButton = document.querySelector('.git15__game__order');
+    const orderButton = document.querySelector('.git15__order');
     orderButton.addEventListener('click', () => order15Cells(cells));
 
-    const messButton = document.querySelector('.git15__game__shuffle');
+    const messButton = document.querySelector('.git15__shuffle');
     messButton.addEventListener('click', () => shuffle15Cells(cells));
 
     function create15Cells (field, cells) {

@@ -67,8 +67,6 @@
                     .skill-slider__item {
                         grid-template-columns: 1fr;
                         grid-template-rows: 1fr 2fr;
-                        .skill-slider__info {
-                        }
                     }
                 }
             }
@@ -370,10 +368,6 @@
             .memo__buttons {
             align-self: flex-end;
             margin-right: 20px;    
-                .memo__hint, .memo__replay {
-                    width: 50px;
-                    height: 50px;
-                }
             }
         }
     }
@@ -425,8 +419,6 @@
 }
 
 @media (max-width: 385px) {
-    body {
-    }
     .noresponse {
         display: flex;
         overflow: hidden;

@@ -112,40 +112,17 @@ body {
       justify-content: flex-end;
       gap: 25px; }
       .header .header__container .header__nav .header__link {
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        padding: 5px 0;
-        background-size: contain;
-        border-radius: 50%;
-        transition: all .1s; }
+        border: none;
+        background: none;
+        cursor: pointer; }
         .header .header__container .header__nav .header__link:active {
           transform: scale(0.95); }
-      .header .header__container .header__nav .header__link_mail {
-        background-image: url(../source/img/mail.png); }
-        .header .header__container .header__nav .header__link_mail:hover {
-          background-image: url(../source/img/mail_blue.png);
-          transition: all .2s; }
-      .header .header__container .header__nav .header__link_git {
-        background-image: url(../source/img/git.png); }
-        .header .header__container .header__nav .header__link_git:hover {
-          background-image: url(../source/img/git_blue.png);
-          transition: all .2s; }
-      .header .header__container .header__nav .header__link_telegram {
-        background-image: url(../source/img/telegram.png); }
-        .header .header__container .header__nav .header__link_telegram:hover {
-          background-image: url(../source/img/telegram_blue.png);
-          transition: all .2s; }
-      .header .header__container .header__nav .header__link_instagram {
-        background-image: url(../source/img/instagram.png); }
-        .header .header__container .header__nav .header__link_instagram:hover {
-          background-image: url(../source/img/instagram_blue.png);
-          transition: all .2s; }
-      .header .header__container .header__nav .header__link_vk {
-        background-image: url(../source/img/vk.png); }
-        .header .header__container .header__nav .header__link_vk:hover {
-          background-image: url(../source/img/vk_blue.png);
-          transition: all .2s; }
+        .header .header__container .header__nav .header__link .svg__btn {
+          width: 50px;
+          height: 50px;
+          fill: rgba(52, 52, 52, 0.75); }
+          .header .header__container .header__nav .header__link .svg__btn:hover {
+            fill: url(#lgrad); }
 
 .about {
   background: url("../source/img/background_pattern.png") 0 0/400px 400px repeat;
@@ -172,23 +149,17 @@ body {
       bottom: 75px;
       gap: 15px; }
       .about .about__container .about__buttons .about__stop-play, .about .about__container .about__buttons .about__reverse {
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        background-size: contain;
-        border-radius: 50%;
         border: none;
-        transition: all .2s; }
+        background: none;
+        cursor: pointer; }
         .about .about__container .about__buttons .about__stop-play:active, .about .about__container .about__buttons .about__reverse:active {
-          scale: .95; }
-      .about .about__container .about__buttons .about__stop-play {
-        background: url(../source/img/play-pause.png) center/contain; }
-        .about .about__container .about__buttons .about__stop-play:hover {
-          background: url(../source/img/play-pause_blue.png) center/contain; }
-      .about .about__container .about__buttons .about__reverse {
-        background: url(../source/img/reverse.png) center/contain; }
-        .about .about__container .about__buttons .about__reverse:hover {
-          background: url(../source/img/reverse_blue.png) center/contain; }
+          transform: scale(0.95); }
+        .about .about__container .about__buttons .about__stop-play .svg__btn, .about .about__container .about__buttons .about__reverse .svg__btn {
+          width: 50px;
+          height: 50px;
+          fill: rgba(52, 52, 52, 0.75); }
+          .about .about__container .about__buttons .about__stop-play .svg__btn:hover, .about .about__container .about__buttons .about__reverse .svg__btn:hover {
+            fill: url(#lgrad); }
     .about .about__container .about__scroll-area {
       min-width: 100vw;
       position: absolute;
@@ -287,27 +258,18 @@ body {
         padding: 15px 5px;
         margin-left: 15px;
         gap: 15px; }
-        .git15 .git15__container .git15__game-container .git15__buttons .git15__button {
-          width: 50px;
-          height: 50px;
-          background-size: contain;
-          background-color: transparent;
+        .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle, .git15 .git15__container .git15__game-container .git15__buttons .git15__order {
           border: none;
-          border-radius: 50%;
-          cursor: pointer;
-          transition: all .2s; }
-        .git15 .git15__container .git15__game-container .git15__buttons .git15__button:active {
-          transform: scale(0.95); }
-        .git15 .git15__container .git15__game-container .git15__buttons .git15__game__shuffle {
-          background-image: url("../source/img/shuffle.png"); }
-          .git15 .git15__container .git15__game-container .git15__buttons .git15__game__shuffle:hover {
-            background-image: url("../source/img/shuffle_blue.png");
-            transition: all .2s; }
-        .git15 .git15__container .git15__game-container .git15__buttons .git15__game__order {
-          background-image: url("../source/img/odrer.png"); }
-          .git15 .git15__container .git15__game-container .git15__buttons .git15__game__order:hover {
-            background-image: url("../source/img/odrer_blue.png");
-            transition: all .2s; }
+          background: none;
+          cursor: pointer; }
+          .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle:active, .git15 .git15__container .git15__game-container .git15__buttons .git15__order:active {
+            transform: scale(0.95); }
+          .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle .svg__btn, .git15 .git15__container .git15__game-container .git15__buttons .git15__order .svg__btn {
+            width: 50px;
+            height: 50px;
+            fill: rgba(52, 52, 52, 0.75); }
+            .git15 .git15__container .git15__game-container .git15__buttons .git15__shuffle .svg__btn:hover, .git15 .git15__container .git15__game-container .git15__buttons .git15__order .svg__btn:hover {
+              fill: url(#lgrad); }
 
 .memo {
   display: flex;
@@ -416,24 +378,17 @@ body {
       gap: 15px;
       margin-top: 15px; }
       .memo .memo__container .memo__buttons .memo__hint, .memo .memo__container .memo__buttons .memo__replay {
-        cursor: pointer;
-        width: 60px;
-        height: 60px;
-        padding: 5px 0;
-        background-size: contain;
-        border-radius: 50%;
-        transition: all .1s;
-        border: none; }
+        border: none;
+        background: none;
+        cursor: pointer; }
         .memo .memo__container .memo__buttons .memo__hint:active, .memo .memo__container .memo__buttons .memo__replay:active {
           transform: scale(0.95); }
-      .memo .memo__container .memo__buttons .memo__hint {
-        background: url(../source/img/flip.png) center/contain; }
-        .memo .memo__container .memo__buttons .memo__hint:hover {
-          background: url(../source/img/flip_blue.png) center/contain; }
-      .memo .memo__container .memo__buttons .memo__replay {
-        background: url(../source/img/restart.png) center/contain; }
-        .memo .memo__container .memo__buttons .memo__replay:hover {
-          background: url(../source/img/restart_blue.png) center/contain; }
+        .memo .memo__container .memo__buttons .memo__hint .svg__btn, .memo .memo__container .memo__buttons .memo__replay .svg__btn {
+          width: 50px;
+          height: 50px;
+          fill: rgba(52, 52, 52, 0.75); }
+          .memo .memo__container .memo__buttons .memo__hint .svg__btn:hover, .memo .memo__container .memo__buttons .memo__replay .svg__btn:hover {
+            fill: url(#lgrad); }
     .memo .memo__container .memo__win {
       position: absolute;
       width: 35vw;
@@ -514,18 +469,17 @@ body {
       align-items: center;
       padding: 0 50px; }
       .skills .skills__container .skill-slider__remote .skill-slider__button {
-        width: 50px;
-        height: 50px;
-        display: block;
         border: none;
-        background: url(../source/img/arrow.png) center/contain no-repeat;
-        transition: all .2s;
+        background: none;
         cursor: pointer; }
-        .skills .skills__container .skill-slider__remote .skill-slider__button:hover {
-          background: url(../source/img/arrow_blue.png) center/contain no-repeat;
-          transition: all .2s; }
         .skills .skills__container .skill-slider__remote .skill-slider__button:active {
           transform: scale(0.95); }
+        .skills .skills__container .skill-slider__remote .skill-slider__button .svg__btn {
+          width: 50px;
+          height: 50px;
+          fill: rgba(52, 52, 52, 0.75); }
+          .skills .skills__container .skill-slider__remote .skill-slider__button .svg__btn:hover {
+            fill: url(#lgrad); }
       .skills .skills__container .skill-slider__remote .skill-slider__button_left {
         transform: rotateZ(180deg); }
         .skills .skills__container .skill-slider__remote .skill-slider__button_left:active {
@@ -856,9 +810,6 @@ body {
   .memo .memo__container .memo__buttons {
     align-self: flex-end;
     margin-right: 20px; }
-    .memo .memo__container .memo__buttons .memo__hint, .memo .memo__container .memo__buttons .memo__replay {
-      width: 50px;
-      height: 50px; }
   .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item {
     grid-template-rows: 1fr; }
     .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__image, .skills .skills__container .skills__slider .skill-slider__row .skill-slider__item .skill-slider__responsive {
