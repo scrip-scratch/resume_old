@@ -98,6 +98,25 @@ body {
     } 
 }
 
+.loader {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #efefef;
+    svg {
+        width: 300px;
+        margin-bottom: 15%;
+    }
+}
+
 // ============================================================================
 
 .header {
@@ -223,6 +242,7 @@ body {
             left: 40%;
             bottom: 10vh;
             gap: 15px;
+            opacity: 0;
             .about__stop-play, .about__reverse {   
                 @include btn-with-svg;
             }
@@ -235,11 +255,12 @@ body {
             z-index: 10;
             cursor: pointer;
             touch-action: none; 
+            margin: 10vh 0 25vh;
         }
         // === about content
         .about__content {
             position: relative;
-            transform: translateX(1000px);
+            transform: translateX(2000px);
             margin: 10vh 0 25vh;
             // === about slider
             .about-slider_moving {
@@ -293,11 +314,13 @@ body {
     align-items: center;
     background-color: #efefef;
     background: url(../source/img/pattern-white-frost-wallpaper.png) center no-repeat;
+    opacity: 0;
     // === 15game container
     .git15__container {
         padding: 10vh 0;
         display: flex;
         gap: 15px;
+        opacity: 0;
         // === 15game info
         .git15__info {
             .git15__header {

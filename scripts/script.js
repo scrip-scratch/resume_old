@@ -238,7 +238,7 @@ headerBurger.addEventListener('click', () => {
 
 const observerOption = {threshold: 0.2};
 
-const elementsClasses = ['.git15__container', '.memo__container', '.skills__container', '.iwant__container'];
+const elementsClasses = ['.memo__container', '.skills__container', '.iwant__container'];
 
 let elementsForObserve = [];
 
